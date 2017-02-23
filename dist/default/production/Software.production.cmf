@@ -1,0 +1,538 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$dist/default/production\Software.production.obj
+cinit CODE 0 13 13 1F 2
+text1 CODE 0 32 32 419 2
+text2 CODE 0 674 674 10C 2
+nvBANK0 BANK0 1 6C 6C 2 1
+maintext CODE 0 44B 44B 229 2
+cstackCOMMON COMMON 1 70 70 8 1
+cstackBANK0 BANK0 1 20 20 33 1
+intentry CODE 0 4 4 D 2
+bssBANK0 BANK0 1 53 53 15 1
+idataBANK0 CODE 0 788 788 4 2
+dataBANK0 BANK0 1 68 68 4 1
+clrtext CODE 0 780 780 8 2
+bssCOMMON COMMON 1 78 78 6 1
+$C:\Users\MACFRE~1\AppData\Local\Temp\saes.obj
+reset_vec CODE 0 0 0 2 2
+end_init CODE 0 11 11 2 2
+config CONFIG 0 2007 2007 2 2
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 6E-6F 1
+RAM A0-EF 1
+RAM 120-16F 1
+BANK0 6E-6F 1
+BANK1 A0-EF 1
+BANK2 120-16F 1
+CONST 2-3 2
+CONST 78C-FFF 2
+ENTRY 2-3 2
+ENTRY 78C-FFF 2
+IDLOC 2000-2003 2
+STACK A0-EF 1
+CODE 2-3 2
+CODE 78C-FFF 2
+SFR0 0-1F 1
+SFR1 80-9F 1
+SFR2 100-11F 1
+SFR3 180-1EF 1
+EEDATA 2100-21FF 2
+STRCODE 2-3 2
+STRCODE 78C-FFF 2
+STRING 2-3 2
+STRING 78C-FFF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production\Software.production.obj
+13 cinit CODE >335:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+13 cinit CODE >338:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+13 cinit CODE >451:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+16 cinit CODE >452:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+17 cinit CODE >453:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+1A cinit CODE >454:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+1B cinit CODE >455:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+1E cinit CODE >456:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+1F cinit CODE >457:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+22 cinit CODE >458:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+23 cinit CODE >477:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+24 cinit CODE >478:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+25 cinit CODE >479:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+26 cinit CODE >480:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+27 cinit CODE >481:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+2A cinit CODE >484:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+2B cinit CODE >485:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+2C cinit CODE >486:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+2D cinit CODE >487:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+2F cinit CODE >493:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+2F cinit CODE >495:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+30 cinit CODE >496:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+4 intentry CODE >81:R:\Fire Alarm Panel\Software\Main.c
+674 text2 CODE >81:R:\Fire Alarm Panel\Software\Main.c
+674 text2 CODE >83:R:\Fire Alarm Panel\Software\Main.c
+676 text2 CODE >84:R:\Fire Alarm Panel\Software\Main.c
+67A text2 CODE >86:R:\Fire Alarm Panel\Software\Main.c
+67E text2 CODE >89:R:\Fire Alarm Panel\Software\Main.c
+680 text2 CODE >90:R:\Fire Alarm Panel\Software\Main.c
+684 text2 CODE >93:R:\Fire Alarm Panel\Software\Main.c
+687 text2 CODE >94:R:\Fire Alarm Panel\Software\Main.c
+689 text2 CODE >97:R:\Fire Alarm Panel\Software\Main.c
+68C text2 CODE >98:R:\Fire Alarm Panel\Software\Main.c
+690 text2 CODE >104:R:\Fire Alarm Panel\Software\Main.c
+697 text2 CODE >105:R:\Fire Alarm Panel\Software\Main.c
+69B text2 CODE >106:R:\Fire Alarm Panel\Software\Main.c
+69B text2 CODE >109:R:\Fire Alarm Panel\Software\Main.c
+6A1 text2 CODE >110:R:\Fire Alarm Panel\Software\Main.c
+6A5 text2 CODE >111:R:\Fire Alarm Panel\Software\Main.c
+6A9 text2 CODE >112:R:\Fire Alarm Panel\Software\Main.c
+6AD text2 CODE >115:R:\Fire Alarm Panel\Software\Main.c
+6B4 text2 CODE >116:R:\Fire Alarm Panel\Software\Main.c
+6B8 text2 CODE >117:R:\Fire Alarm Panel\Software\Main.c
+6C0 text2 CODE >118:R:\Fire Alarm Panel\Software\Main.c
+6C0 text2 CODE >121:R:\Fire Alarm Panel\Software\Main.c
+6C7 text2 CODE >122:R:\Fire Alarm Panel\Software\Main.c
+6CB text2 CODE >125:R:\Fire Alarm Panel\Software\Main.c
+6CC text2 CODE >130:R:\Fire Alarm Panel\Software\Main.c
+6CE text2 CODE >131:R:\Fire Alarm Panel\Software\Main.c
+6D2 text2 CODE >134:R:\Fire Alarm Panel\Software\Main.c
+6D6 text2 CODE >137:R:\Fire Alarm Panel\Software\Main.c
+6E4 text2 CODE >138:R:\Fire Alarm Panel\Software\Main.c
+6E5 text2 CODE >142:R:\Fire Alarm Panel\Software\Main.c
+6FC text2 CODE >148:R:\Fire Alarm Panel\Software\Main.c
+705 text2 CODE >153:R:\Fire Alarm Panel\Software\Main.c
+70D text2 CODE >156:R:\Fire Alarm Panel\Software\Main.c
+714 text2 CODE >157:R:\Fire Alarm Panel\Software\Main.c
+729 text2 CODE >158:R:\Fire Alarm Panel\Software\Main.c
+744 text2 CODE >159:R:\Fire Alarm Panel\Software\Main.c
+759 text2 CODE >160:R:\Fire Alarm Panel\Software\Main.c
+774 text2 CODE >163:R:\Fire Alarm Panel\Software\Main.c
+775 text2 CODE >165:R:\Fire Alarm Panel\Software\Main.c
+32 text1 CODE >168:R:\Fire Alarm Panel\Software\Main.c
+32 text1 CODE >171:R:\Fire Alarm Panel\Software\Main.c
+3D text1 CODE >173:R:\Fire Alarm Panel\Software\Main.c
+41 text1 CODE >174:R:\Fire Alarm Panel\Software\Main.c
+45 text1 CODE >175:R:\Fire Alarm Panel\Software\Main.c
+46 text1 CODE >176:R:\Fire Alarm Panel\Software\Main.c
+47 text1 CODE >177:R:\Fire Alarm Panel\Software\Main.c
+4B text1 CODE >178:R:\Fire Alarm Panel\Software\Main.c
+4C text1 CODE >179:R:\Fire Alarm Panel\Software\Main.c
+4C text1 CODE >181:R:\Fire Alarm Panel\Software\Main.c
+50 text1 CODE >182:R:\Fire Alarm Panel\Software\Main.c
+50 text1 CODE >185:R:\Fire Alarm Panel\Software\Main.c
+5A text1 CODE >188:R:\Fire Alarm Panel\Software\Main.c
+5E text1 CODE >189:R:\Fire Alarm Panel\Software\Main.c
+5E text1 CODE >192:R:\Fire Alarm Panel\Software\Main.c
+68 text1 CODE >193:R:\Fire Alarm Panel\Software\Main.c
+6C text1 CODE >194:R:\Fire Alarm Panel\Software\Main.c
+6D text1 CODE >196:R:\Fire Alarm Panel\Software\Main.c
+71 text1 CODE >197:R:\Fire Alarm Panel\Software\Main.c
+71 text1 CODE >200:R:\Fire Alarm Panel\Software\Main.c
+79 text1 CODE >201:R:\Fire Alarm Panel\Software\Main.c
+7D text1 CODE >203:R:\Fire Alarm Panel\Software\Main.c
+81 text1 CODE >204:R:\Fire Alarm Panel\Software\Main.c
+81 text1 CODE >209:R:\Fire Alarm Panel\Software\Main.c
+89 text1 CODE >210:R:\Fire Alarm Panel\Software\Main.c
+8D text1 CODE >211:R:\Fire Alarm Panel\Software\Main.c
+8E text1 CODE >213:R:\Fire Alarm Panel\Software\Main.c
+92 text1 CODE >214:R:\Fire Alarm Panel\Software\Main.c
+92 text1 CODE >217:R:\Fire Alarm Panel\Software\Main.c
+9A text1 CODE >218:R:\Fire Alarm Panel\Software\Main.c
+9E text1 CODE >220:R:\Fire Alarm Panel\Software\Main.c
+A2 text1 CODE >226:R:\Fire Alarm Panel\Software\Main.c
+A4 text1 CODE >227:R:\Fire Alarm Panel\Software\Main.c
+A8 text1 CODE >237:R:\Fire Alarm Panel\Software\Main.c
+AA text1 CODE >238:R:\Fire Alarm Panel\Software\Main.c
+AE text1 CODE >240:R:\Fire Alarm Panel\Software\Main.c
+C0 text1 CODE >241:R:\Fire Alarm Panel\Software\Main.c
+C1 text1 CODE >242:R:\Fire Alarm Panel\Software\Main.c
+C5 text1 CODE >243:R:\Fire Alarm Panel\Software\Main.c
+C9 text1 CODE >247:R:\Fire Alarm Panel\Software\Main.c
+CB text1 CODE >248:R:\Fire Alarm Panel\Software\Main.c
+CF text1 CODE >250:R:\Fire Alarm Panel\Software\Main.c
+E2 text1 CODE >251:R:\Fire Alarm Panel\Software\Main.c
+E3 text1 CODE >252:R:\Fire Alarm Panel\Software\Main.c
+E7 text1 CODE >253:R:\Fire Alarm Panel\Software\Main.c
+EB text1 CODE >257:R:\Fire Alarm Panel\Software\Main.c
+ED text1 CODE >258:R:\Fire Alarm Panel\Software\Main.c
+F1 text1 CODE >260:R:\Fire Alarm Panel\Software\Main.c
+F2 text1 CODE >261:R:\Fire Alarm Panel\Software\Main.c
+F6 text1 CODE >262:R:\Fire Alarm Panel\Software\Main.c
+FA text1 CODE >266:R:\Fire Alarm Panel\Software\Main.c
+FC text1 CODE >267:R:\Fire Alarm Panel\Software\Main.c
+100 text1 CODE >269:R:\Fire Alarm Panel\Software\Main.c
+104 text1 CODE >272:R:\Fire Alarm Panel\Software\Main.c
+10B text1 CODE >273:R:\Fire Alarm Panel\Software\Main.c
+10F text1 CODE >277:R:\Fire Alarm Panel\Software\Main.c
+113 text1 CODE >285:R:\Fire Alarm Panel\Software\Main.c
+171 text1 CODE >296:R:\Fire Alarm Panel\Software\Main.c
+1CF text1 CODE >297:R:\Fire Alarm Panel\Software\Main.c
+1DC text1 CODE >300:R:\Fire Alarm Panel\Software\Main.c
+1E0 text1 CODE >308:R:\Fire Alarm Panel\Software\Main.c
+23E text1 CODE >311:R:\Fire Alarm Panel\Software\Main.c
+242 text1 CODE >319:R:\Fire Alarm Panel\Software\Main.c
+2A0 text1 CODE >320:R:\Fire Alarm Panel\Software\Main.c
+2AD text1 CODE >324:R:\Fire Alarm Panel\Software\Main.c
+2B1 text1 CODE >328:R:\Fire Alarm Panel\Software\Main.c
+2FC text1 CODE >331:R:\Fire Alarm Panel\Software\Main.c
+300 text1 CODE >335:R:\Fire Alarm Panel\Software\Main.c
+34B text1 CODE >336:R:\Fire Alarm Panel\Software\Main.c
+359 text1 CODE >340:R:\Fire Alarm Panel\Software\Main.c
+35D text1 CODE >341:R:\Fire Alarm Panel\Software\Main.c
+36B text1 CODE >344:R:\Fire Alarm Panel\Software\Main.c
+37F text1 CODE >345:R:\Fire Alarm Panel\Software\Main.c
+393 text1 CODE >346:R:\Fire Alarm Panel\Software\Main.c
+3A7 text1 CODE >347:R:\Fire Alarm Panel\Software\Main.c
+3BB text1 CODE >348:R:\Fire Alarm Panel\Software\Main.c
+3CF text1 CODE >349:R:\Fire Alarm Panel\Software\Main.c
+3D2 text1 CODE >355:R:\Fire Alarm Panel\Software\Main.c
+3D4 text1 CODE >356:R:\Fire Alarm Panel\Software\Main.c
+3D8 text1 CODE >358:R:\Fire Alarm Panel\Software\Main.c
+3DC text1 CODE >362:R:\Fire Alarm Panel\Software\Main.c
+3DE text1 CODE >363:R:\Fire Alarm Panel\Software\Main.c
+3E2 text1 CODE >366:R:\Fire Alarm Panel\Software\Main.c
+3E4 text1 CODE >367:R:\Fire Alarm Panel\Software\Main.c
+3E6 text1 CODE >370:R:\Fire Alarm Panel\Software\Main.c
+3E8 text1 CODE >371:R:\Fire Alarm Panel\Software\Main.c
+3EC text1 CODE >373:R:\Fire Alarm Panel\Software\Main.c
+3ED text1 CODE >374:R:\Fire Alarm Panel\Software\Main.c
+3F0 text1 CODE >375:R:\Fire Alarm Panel\Software\Main.c
+3F4 text1 CODE >377:R:\Fire Alarm Panel\Software\Main.c
+3F5 text1 CODE >381:R:\Fire Alarm Panel\Software\Main.c
+3F8 text1 CODE >382:R:\Fire Alarm Panel\Software\Main.c
+3FC text1 CODE >387:R:\Fire Alarm Panel\Software\Main.c
+3FE text1 CODE >388:R:\Fire Alarm Panel\Software\Main.c
+402 text1 CODE >391:R:\Fire Alarm Panel\Software\Main.c
+40C text1 CODE >392:R:\Fire Alarm Panel\Software\Main.c
+422 text1 CODE >394:R:\Fire Alarm Panel\Software\Main.c
+429 text1 CODE >395:R:\Fire Alarm Panel\Software\Main.c
+440 text1 CODE >396:R:\Fire Alarm Panel\Software\Main.c
+444 text1 CODE >401:R:\Fire Alarm Panel\Software\Main.c
+446 text1 CODE >402:R:\Fire Alarm Panel\Software\Main.c
+44B maintext CODE >411:R:\Fire Alarm Panel\Software\Main.c
+44B maintext CODE >415:R:\Fire Alarm Panel\Software\Main.c
+44F maintext CODE >416:R:\Fire Alarm Panel\Software\Main.c
+451 maintext CODE >417:R:\Fire Alarm Panel\Software\Main.c
+454 maintext CODE >420:R:\Fire Alarm Panel\Software\Main.c
+458 maintext CODE >421:R:\Fire Alarm Panel\Software\Main.c
+45A maintext CODE >422:R:\Fire Alarm Panel\Software\Main.c
+45C maintext CODE >423:R:\Fire Alarm Panel\Software\Main.c
+45E maintext CODE >424:R:\Fire Alarm Panel\Software\Main.c
+460 maintext CODE >425:R:\Fire Alarm Panel\Software\Main.c
+464 maintext CODE >426:R:\Fire Alarm Panel\Software\Main.c
+466 maintext CODE >427:R:\Fire Alarm Panel\Software\Main.c
+469 maintext CODE >428:R:\Fire Alarm Panel\Software\Main.c
+46A maintext CODE >429:R:\Fire Alarm Panel\Software\Main.c
+46B maintext CODE >430:R:\Fire Alarm Panel\Software\Main.c
+46C maintext CODE >431:R:\Fire Alarm Panel\Software\Main.c
+46E maintext CODE >432:R:\Fire Alarm Panel\Software\Main.c
+470 maintext CODE >433:R:\Fire Alarm Panel\Software\Main.c
+472 maintext CODE >434:R:\Fire Alarm Panel\Software\Main.c
+474 maintext CODE >435:R:\Fire Alarm Panel\Software\Main.c
+475 maintext CODE >438:R:\Fire Alarm Panel\Software\Main.c
+477 maintext CODE >439:R:\Fire Alarm Panel\Software\Main.c
+47B maintext CODE >442:R:\Fire Alarm Panel\Software\Main.c
+47D maintext CODE >443:R:\Fire Alarm Panel\Software\Main.c
+481 maintext CODE >445:R:\Fire Alarm Panel\Software\Main.c
+482 maintext CODE >450:R:\Fire Alarm Panel\Software\Main.c
+490 maintext CODE >451:R:\Fire Alarm Panel\Software\Main.c
+496 maintext CODE >455:R:\Fire Alarm Panel\Software\Main.c
+4E1 maintext CODE >458:R:\Fire Alarm Panel\Software\Main.c
+4EF maintext CODE >459:R:\Fire Alarm Panel\Software\Main.c
+502 maintext CODE >460:R:\Fire Alarm Panel\Software\Main.c
+514 maintext CODE >462:R:\Fire Alarm Panel\Software\Main.c
+517 maintext CODE >465:R:\Fire Alarm Panel\Software\Main.c
+51D maintext CODE >466:R:\Fire Alarm Panel\Software\Main.c
+52C maintext CODE >467:R:\Fire Alarm Panel\Software\Main.c
+54D maintext CODE >468:R:\Fire Alarm Panel\Software\Main.c
+569 maintext CODE >469:R:\Fire Alarm Panel\Software\Main.c
+577 maintext CODE >470:R:\Fire Alarm Panel\Software\Main.c
+579 maintext CODE >473:R:\Fire Alarm Panel\Software\Main.c
+57D maintext CODE >474:R:\Fire Alarm Panel\Software\Main.c
+58F maintext CODE >475:R:\Fire Alarm Panel\Software\Main.c
+591 maintext CODE >478:R:\Fire Alarm Panel\Software\Main.c
+595 maintext CODE >482:R:\Fire Alarm Panel\Software\Main.c
+671 maintext CODE >483:R:\Fire Alarm Panel\Software\Main.c
+673 maintext CODE >448:R:\Fire Alarm Panel\Software\Main.c
+780 clrtext CODE >464:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+780 clrtext CODE >465:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+781 clrtext CODE >466:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+781 clrtext CODE >467:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+782 clrtext CODE >468:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+783 clrtext CODE >469:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+784 clrtext CODE >470:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+785 clrtext CODE >471:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+786 clrtext CODE >472:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+787 clrtext CODE >473:C:\Users\MACFRE~1\AppData\Local\Temp\saes.
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+___latbits 1 0 ABS 0 - dist/default/production\Software.production.obj
+__LdataBANK0 0 0 ABS 0 dataBANK0 -
+__size_of_softwareISR 0 0 ABS 0 - dist/default/production\Software.production.obj
+__Hspace_0 2009 0 ABS 0 - -
+__Hspace_1 7E 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__HidataBANK0 0 0 ABS 0 idataBANK0 -
+_generalTroubleTracker 6D 0 BANK0 1 nvBANK0 dist/default/production\Software.production.obj
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+ltemp0 7E 0 ABS 0 - dist/default/production\Software.production.obj
+ltemp1 82 0 ABS 0 - dist/default/production\Software.production.obj
+ltemp2 86 0 ABS 0 - dist/default/production\Software.production.obj
+ltemp3 80 0 ABS 0 - dist/default/production\Software.production.obj
+__Hstrings 0 0 ABS 0 strings -
+_LATA 53 0 BANK0 1 bssBANK0 dist/default/production\Software.production.obj
+_LATB 54 0 BANK0 1 bssBANK0 dist/default/production\Software.production.obj
+_LATC 55 0 BANK0 1 bssBANK0 dist/default/production\Software.production.obj
+_LATD 56 0 BANK0 1 bssBANK0 dist/default/production\Software.production.obj
+_PIE1 8C 0 ABS 0 - dist/default/production\Software.production.obj
+_PIR1 C 0 ABS 0 - dist/default/production\Software.production.obj
+___sp 0 0 STACK 2 stack C:\Users\MACFRE~1\AppData\Local\Temp\saes.obj
+_main 896 0 CODE 0 maintext dist/default/production\Software.production.obj
+btemp 7E 0 ABS 0 - dist/default/production\Software.production.obj
+ltemp 7E 0 ABS 0 - dist/default/production\Software.production.obj
+start 22 0 CODE 0 init C:\Users\MACFRE~1\AppData\Local\Temp\saes.obj
+ttemp 7E 0 ABS 0 - dist/default/production\Software.production.obj
+wtemp 7E 0 ABS 0 - dist/default/production\Software.production.obj
+__size_of_main 0 0 ABS 0 - dist/default/production\Software.production.obj
+_generalTroubleInterrupt 5D 0 BANK0 1 bssBANK0 dist/default/production\Software.production.obj
+__HbssCOMMON 0 0 ABS 0 bssCOMMON -
+__LidataBANK0 0 0 ABS 0 idataBANK0 -
+_currentConditions 59 0 BANK0 1 bssBANK0 dist/default/production\Software.production.obj
+__Hpowerup 0 0 CODE 0 powerup -
+ttemp0 7E 0 ABS 0 - dist/default/production\Software.production.obj
+ttemp1 81 0 ABS 0 - dist/default/production\Software.production.obj
+ttemp2 84 0 ABS 0 - dist/default/production\Software.production.obj
+ttemp3 87 0 ABS 0 - dist/default/production\Software.production.obj
+ttemp4 7F 0 ABS 0 - dist/default/production\Software.production.obj
+_buttonInterrupt 58 0 BANK0 1 bssBANK0 dist/default/production\Software.production.obj
+intlevel0 0 0 CODE 0 functab C:\Users\MACFRE~1\AppData\Local\Temp\saes.obj
+intlevel1 0 0 CODE 0 functab C:\Users\MACFRE~1\AppData\Local\Temp\saes.obj
+intlevel2 0 0 CODE 0 functab C:\Users\MACFRE~1\AppData\Local\Temp\saes.obj
+intlevel3 0 0 CODE 0 functab C:\Users\MACFRE~1\AppData\Local\Temp\saes.obj
+intlevel4 0 0 CODE 0 functab C:\Users\MACFRE~1\AppData\Local\Temp\saes.obj
+intlevel5 0 0 CODE 0 functab C:\Users\MACFRE~1\AppData\Local\Temp\saes.obj
+__LbssCOMMON 0 0 ABS 0 bssCOMMON -
+wtemp0 7E 0 ABS 0 - dist/default/production\Software.production.obj
+wtemp1 80 0 ABS 0 - dist/default/production\Software.production.obj
+wtemp2 82 0 ABS 0 - dist/default/production\Software.production.obj
+wtemp3 84 0 ABS 0 - dist/default/production\Software.production.obj
+wtemp4 86 0 ABS 0 - dist/default/production\Software.production.obj
+wtemp5 88 0 ABS 0 - dist/default/production\Software.production.obj
+wtemp6 7F 0 ABS 0 - dist/default/production\Software.production.obj
+__Hfunctab 0 0 CODE 0 functab -
+_preAlarmCause 61 0 BANK0 1 bssBANK0 dist/default/production\Software.production.obj
+__Hclrtext 0 0 ABS 0 clrtext -
+_slcTroubleTracker 7A 0 COMMON 1 bssCOMMON dist/default/production\Software.production.obj
+__size_of_hardwareInterruptISR 0 0 ABS 0 - dist/default/production\Software.production.obj
+_ADCON0 1F 0 ABS 0 - dist/default/production\Software.production.obj
+_ADCON1 9F 0 ABS 0 - dist/default/production\Software.production.obj
+_ADRESH 1E 0 ABS 0 - dist/default/production\Software.production.obj
+_ADRESL 9E 0 ABS 0 - dist/default/production\Software.production.obj
+_ANSELH 189 0 ABS 0 - dist/default/production\Software.production.obj
+__end_of_hardwareInterruptISR F00 0 CODE 0 text2 dist/default/production\Software.production.obj
+__Lmaintext 0 0 ABS 0 maintext -
+_nacTroubleInterrupt 60 0 BANK0 1 bssBANK0 dist/default/production\Software.production.obj
+__LnvBANK0 0 0 ABS 0 nvBANK0 -
+_INTCON B 0 ABS 0 - dist/default/production\Software.production.obj
+_OPTION_REG 81 0 ABS 0 - dist/default/production\Software.production.obj
+_preAlarmControl 62 0 BANK0 1 bssBANK0 dist/default/production\Software.production.obj
+_generalAlarmCause 5A 0 BANK0 1 bssBANK0 dist/default/production\Software.production.obj
+__CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\Software.production.obj
+_resetCounter 63 0 BANK0 1 bssBANK0 dist/default/production\Software.production.obj
+start_initialization 26 0 CODE 0 cinit dist/default/production\Software.production.obj
+_OSCCON 8F 0 ABS 0 - dist/default/production\Software.production.obj
+_slcAlarmTracker 78 0 COMMON 1 bssCOMMON dist/default/production\Software.production.obj
+_softwareISR 64 0 CODE 0 text1 dist/default/production\Software.production.obj
+_generalTroubleCause 5C 0 BANK0 1 bssBANK0 dist/default/production\Software.production.obj
+clear_ram0 F00 0 CODE 0 clrtext dist/default/production\Software.production.obj
+__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\Software.production.obj
+_WDTCON 105 0 ABS 0 - dist/default/production\Software.production.obj
+___int_sp 0 0 STACK 2 stack C:\Users\MACFRE~1\AppData\Local\Temp\saes.obj
+_buttonTracker 6C 0 BANK0 1 nvBANK0 dist/default/production\Software.production.obj
+__Hbank0 0 0 ABS 0 bank0 -
+__Hbank1 0 0 ABS 0 bank1 -
+__Hbank2 0 0 ABS 0 bank2 -
+__Hbank3 0 0 BANK3 1 bank3 -
+__Hcinit 64 0 CODE 0 cinit -
+__Hidloc 0 0 IDLOC 0 idloc -
+__Hstack 0 0 STACK 2 stack -
+__Hmaintext 0 0 ABS 0 maintext -
+__Hcommon 0 0 ABS 0 common -
+__Hconfig 4012 0 CONFIG 0 config -
+__Lbank0 0 0 ABS 0 bank0 -
+__Lbank1 0 0 ABS 0 bank1 -
+__Lbank2 0 0 ABS 0 bank2 -
+__Lbank3 0 0 BANK3 1 bank3 -
+__Lcinit 26 0 CODE 0 cinit -
+__Lidloc 0 0 IDLOC 0 idloc -
+__Lstack 0 0 STACK 2 stack -
+__Habs1 0 0 ABS 0 abs1 -
+__Hcode 0 0 ABS 0 code -
+__Hinit 22 0 CODE 0 init -
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Hsfr1 0 0 ABS 0 sfr1 -
+__Hsfr2 0 0 ABS 0 sfr2 -
+__Hsfr3 0 0 ABS 0 sfr3 -
+__Htext 0 0 ABS 0 text -
+__Labs1 0 0 ABS 0 abs1 -
+__Lcode 0 0 ABS 0 code -
+__Linit 22 0 CODE 0 init -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Lsfr1 0 0 ABS 0 sfr1 -
+__Lsfr2 0 0 ABS 0 sfr2 -
+__Lsfr3 0 0 ABS 0 sfr3 -
+__Ltext 0 0 ABS 0 text -
+__pnvBANK0 6C 0 BANK0 1 nvBANK0 dist/default/production\Software.production.obj
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+__S0 2009 0 ABS 0 - -
+__S1 7E 0 ABS 0 - -
+__S2 0 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+__CFG_BOR4V$BOR40V 0 0 ABS 0 - dist/default/production\Software.production.obj
+saved_w 7E 0 ABS 0 - dist/default/production\Software.production.obj
+__CFG_FOSC$INTRC_NOCLKOUT 0 0 ABS 0 - dist/default/production\Software.production.obj
+__CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\Software.production.obj
+_ledControl 5E 0 BANK0 1 bssBANK0 dist/default/production\Software.production.obj
+__HnvBANK0 0 0 ABS 0 nvBANK0 -
+__Lintentry 8 0 CODE 0 intentry -
+reset_vec 0 0 CODE 0 reset_vec C:\Users\MACFRE~1\AppData\Local\Temp\saes.obj
+_coderControl 68 0 BANK0 1 dataBANK0 dist/default/production\Software.production.obj
+_coderCounter 69 0 BANK0 1 dataBANK0 dist/default/production\Software.production.obj
+__pdataBANK0 68 0 BANK0 1 dataBANK0 dist/default/production\Software.production.obj
+__LbssBANK0 0 0 ABS 0 bssBANK0 -
+__CFG_FCMEN$ON 0 0 ABS 0 - dist/default/production\Software.production.obj
+_slcTroubleCause 65 0 BANK0 1 bssBANK0 dist/default/production\Software.production.obj
+_activeADChannel 57 0 BANK0 1 bssBANK0 dist/default/production\Software.production.obj
+__pmaintext 896 0 CODE 0 maintext dist/default/production\Software.production.obj
+__Lcommon 0 0 ABS 0 common -
+__Lconfig 400E 0 CONFIG 0 config -
+__CFG_CP$OFF 0 0 ABS 0 - dist/default/production\Software.production.obj
+__CFG_IESO$ON 0 0 ABS 0 - dist/default/production\Software.production.obj
+__CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\Software.production.obj
+_hardwareInterruptISR CE8 0 CODE 0 text2 dist/default/production\Software.production.obj
+_generalInterrupt 5B 0 BANK0 1 bssBANK0 dist/default/production\Software.production.obj
+stackhi 0 0 ABS 0 - C:\Users\MACFRE~1\AppData\Local\Temp\saes.obj
+stacklo 0 0 ABS 0 - C:\Users\MACFRE~1\AppData\Local\Temp\saes.obj
+_nacTypeControl 6B 0 BANK0 1 dataBANK0 dist/default/production\Software.production.obj
+__CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\Software.production.obj
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__pbssCOMMON 78 0 COMMON 1 bssCOMMON dist/default/production\Software.production.obj
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__Lend_init 22 0 CODE 0 end_init -
+__LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+end_of_initialization 5E 0 CODE 0 cinit dist/default/production\Software.production.obj
+__Hintentry 22 0 CODE 0 intentry -
+_slcAlarmInterrupt 7D 0 COMMON 1 bssCOMMON dist/default/production\Software.production.obj
+__end_of_softwareISR 896 0 CODE 0 text1 dist/default/production\Software.production.obj
+__Lstrings 0 0 ABS 0 strings -
+__Hreset_vec 4 0 CODE 0 reset_vec -
+__HbssBANK0 0 0 ABS 0 bssBANK0 -
+__ptext1 64 0 CODE 0 text1 dist/default/production\Software.production.obj
+__ptext2 CE8 0 CODE 0 text2 dist/default/production\Software.production.obj
+_nacTroubleTracker 7C 0 COMMON 1 bssCOMMON dist/default/production\Software.production.obj
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+__Lreset_vec 0 0 CODE 0 reset_vec -
+_nacControl 6A 0 BANK0 1 dataBANK0 dist/default/production\Software.production.obj
+__end_of__initialization 5E 0 CODE 0 cinit dist/default/production\Software.production.obj
+__Lfunctab 0 0 CODE 0 functab -
+__pidataBANK0 F10 0 CODE 0 idataBANK0 dist/default/production\Software.production.obj
+__Lclrtext 0 0 ABS 0 clrtext -
+_nacTroubleCause 5F 0 BANK0 1 bssBANK0 dist/default/production\Software.production.obj
+_utilityCounter 67 0 BANK0 1 bssBANK0 dist/default/production\Software.production.obj
+__CFG_PWRTE$ON 0 0 ABS 0 - dist/default/production\Software.production.obj
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\Software.production.obj
+__Hend_init 26 0 CODE 0 end_init -
+__end_of_main CE8 0 CODE 0 maintext dist/default/production\Software.production.obj
+_ANSEL 188 0 ABS 0 - dist/default/production\Software.production.obj
+_PORTA 5 0 ABS 0 - dist/default/production\Software.production.obj
+_PORTB 6 0 ABS 0 - dist/default/production\Software.production.obj
+_PORTC 7 0 ABS 0 - dist/default/production\Software.production.obj
+_PORTD 8 0 ABS 0 - dist/default/production\Software.production.obj
+_PORTE 9 0 ABS 0 - dist/default/production\Software.production.obj
+_TRISA 85 0 ABS 0 - dist/default/production\Software.production.obj
+_TRISB 86 0 ABS 0 - dist/default/production\Software.production.obj
+_TRISC 87 0 ABS 0 - dist/default/production\Software.production.obj
+_TRISD 88 0 ABS 0 - dist/default/production\Software.production.obj
+_TRISE 89 0 ABS 0 - dist/default/production\Software.production.obj
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+interrupt_function 8 0 CODE 0 intentry dist/default/production\Software.production.obj
+__CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\Software.production.obj
+_slcTroubleInterrupt 66 0 BANK0 1 bssBANK0 dist/default/production\Software.production.obj
+__pintentry 8 0 CODE 0 intentry dist/default/production\Software.production.obj
+__HdataBANK0 0 0 ABS 0 dataBANK0 -
+__initialization 26 0 CODE 0 cinit dist/default/production\Software.production.obj
+__pbssBANK0 53 0 BANK0 1 bssBANK0 dist/default/production\Software.production.obj
+__CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\Software.production.obj
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+cstackCOMMON 1 70 70 E 1
+cstackBANK0 1 20 20 4E 1
+intentry 0 4 8 788 2
+reset_vec 0 0 0 2 2
+config 0 2007 400E 2 2

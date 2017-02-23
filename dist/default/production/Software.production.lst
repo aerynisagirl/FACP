@@ -1,0 +1,3083 @@
+
+
+Microchip Technology PIC LITE Macro Assembler V1.38 build -256452561 
+                                                                                               Wed Feb 22 17:57:47 2017
+
+Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010351
+     1                           	processor	16F884
+     2                           	opt	pw 120
+     3                           	opt	lm
+     4                           	psect	idataBANK0,global,class=CODE,delta=2
+     5                           	psect	nvBANK0,global,class=BANK0,space=1,delta=1
+     6                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     7                           	psect	bssCOMMON,global,class=COMMON,space=1,delta=1
+     8                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1
+     9                           	psect	dataBANK0,global,class=BANK0,space=1,delta=1
+    10                           	psect	clrtext,global,class=CODE,delta=2
+    11                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+    12                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1
+    13                           	psect	maintext,global,class=CODE,split=1,delta=2
+    14                           	psect	text1,local,class=CODE,merge=1,delta=2
+    15                           	psect	text2,local,class=CODE,merge=1,delta=2
+    16                           	psect	intentry,global,class=CODE,delta=2
+    17                           	dabs	1,0x7E,2
+    18  0000                     	;# 
+    19  0001                     	;# 
+    20  0002                     	;# 
+    21  0003                     	;# 
+    22  0004                     	;# 
+    23  0005                     	;# 
+    24  0006                     	;# 
+    25  0007                     	;# 
+    26  0008                     	;# 
+    27  0009                     	;# 
+    28  000A                     	;# 
+    29  000B                     	;# 
+    30  000C                     	;# 
+    31  000D                     	;# 
+    32  000E                     	;# 
+    33  000E                     	;# 
+    34  000F                     	;# 
+    35  0010                     	;# 
+    36  0011                     	;# 
+    37  0012                     	;# 
+    38  0013                     	;# 
+    39  0014                     	;# 
+    40  0015                     	;# 
+    41  0015                     	;# 
+    42  0016                     	;# 
+    43  0017                     	;# 
+    44  0018                     	;# 
+    45  0019                     	;# 
+    46  001A                     	;# 
+    47  001B                     	;# 
+    48  001B                     	;# 
+    49  001C                     	;# 
+    50  001D                     	;# 
+    51  001E                     	;# 
+    52  001F                     	;# 
+    53  0081                     	;# 
+    54  0085                     	;# 
+    55  0086                     	;# 
+    56  0087                     	;# 
+    57  0088                     	;# 
+    58  0089                     	;# 
+    59  008C                     	;# 
+    60  008D                     	;# 
+    61  008E                     	;# 
+    62  008F                     	;# 
+    63  0090                     	;# 
+    64  0091                     	;# 
+    65  0092                     	;# 
+    66  0093                     	;# 
+    67  0093                     	;# 
+    68  0093                     	;# 
+    69  0094                     	;# 
+    70  0095                     	;# 
+    71  0096                     	;# 
+    72  0097                     	;# 
+    73  0098                     	;# 
+    74  0099                     	;# 
+    75  009A                     	;# 
+    76  009B                     	;# 
+    77  009C                     	;# 
+    78  009D                     	;# 
+    79  009E                     	;# 
+    80  009F                     	;# 
+    81  0105                     	;# 
+    82  0107                     	;# 
+    83  0108                     	;# 
+    84  0109                     	;# 
+    85  010C                     	;# 
+    86  010C                     	;# 
+    87  010D                     	;# 
+    88  010E                     	;# 
+    89  010F                     	;# 
+    90  0185                     	;# 
+    91  0187                     	;# 
+    92  0188                     	;# 
+    93  0189                     	;# 
+    94  018C                     	;# 
+    95  018D                     	;# 
+    96                           
+    97                           	psect	idataBANK0
+    98  0788                     __pidataBANK0:	
+    99                           
+   100                           ;initializer for _coderControl
+   101  0788  3403               	retlw	3
+   102                           
+   103                           ;initializer for _coderCounter
+   104  0789  3413               	retlw	19
+   105                           
+   106                           ;initializer for _nacControl
+   107  078A  34C0               	retlw	192
+   108                           
+   109                           ;initializer for _nacTypeControl
+   110  078B  340F               	retlw	15
+   111                           
+   112                           	psect	nvBANK0
+   113  006C                     __pnvBANK0:	
+   114  006C                     _buttonTracker:	
+   115  006C                     	ds	1
+   116  006D                     _generalTroubleTracker:	
+   117  006D                     	ds	1
+   118  001F                     _ADCON0	set	31
+   119  001E                     _ADRESH	set	30
+   120  000B                     _INTCON	set	11
+   121  000C                     _PIR1	set	12
+   122  0005                     _PORTA	set	5
+   123  0006                     _PORTB	set	6
+   124  0007                     _PORTC	set	7
+   125  0008                     _PORTD	set	8
+   126  0009                     _PORTE	set	9
+   127  009F                     _ADCON1	set	159
+   128  009E                     _ADRESL	set	158
+   129  0081                     _OPTION_REG	set	129
+   130  008F                     _OSCCON	set	143
+   131  008C                     _PIE1	set	140
+   132  0085                     _TRISA	set	133
+   133  0086                     _TRISB	set	134
+   134  0087                     _TRISC	set	135
+   135  0088                     _TRISD	set	136
+   136  0089                     _TRISE	set	137
+   137  0105                     _WDTCON	set	261
+   138  0188                     _ANSEL	set	392
+   139  0189                     _ANSELH	set	393
+   140                           
+   141                           ; #config settings
+   142  0000                     
+   143                           	psect	cinit
+   144  0013                     start_initialization:	
+   145  0013                     __initialization:	
+   146                           
+   147                           ; Initialize objects allocated to BANK0
+   148  0013  118A  2788  118A   	fcall	__pidataBANK0	;fetch initializer
+   149  0016  00E8               	movwf	__pdataBANK0& (0+127)
+   150  0017  118A  2789  118A   	fcall	__pidataBANK0+1	;fetch initializer
+   151  001A  00E9               	movwf	(__pdataBANK0+1)& (0+127)
+   152  001B  118A  278A  118A   	fcall	__pidataBANK0+2	;fetch initializer
+   153  001E  00EA               	movwf	(__pdataBANK0+2)& (0+127)
+   154  001F  118A  278B  118A   	fcall	__pidataBANK0+3	;fetch initializer
+   155  0022  00EB               	movwf	(__pdataBANK0+3)& (0+127)
+   156                           
+   157                           ; Clear objects allocated to BANK0
+   158  0023  1383               	bcf	3,7	;select IRP bank0
+   159  0024  3053               	movlw	low __pbssBANK0
+   160  0025  0084               	movwf	4
+   161  0026  3068               	movlw	low (__pbssBANK0+21)
+   162  0027  118A  2780  118A   	fcall	clear_ram0
+   163                           
+   164                           ; Clear objects allocated to COMMON
+   165  002A  3078               	movlw	low __pbssCOMMON
+   166  002B  0084               	movwf	4
+   167  002C  307E               	movlw	low (__pbssCOMMON+6)
+   168  002D  118A  2780         	fcall	clear_ram0
+   169  002F                     end_of_initialization:	
+   170                           ;End of C runtime variable initialization code
+   171                           
+   172  002F                     __end_of__initialization:	
+   173  002F  0183               	clrf	3
+   174  0030  118A  2C4B         	ljmp	_main	;jump to C main() function
+   175                           
+   176                           	psect	bssCOMMON
+   177  0078                     __pbssCOMMON:	
+   178  0078                     _slcAlarmTracker:	
+   179  0078                     	ds	2
+   180  007A                     _slcTroubleTracker:	
+   181  007A                     	ds	2
+   182  007C                     _nacTroubleTracker:	
+   183  007C                     	ds	1
+   184  007D                     _slcAlarmInterrupt:	
+   185  007D                     	ds	1
+   186                           
+   187                           	psect	bssBANK0
+   188  0053                     __pbssBANK0:	
+   189  0053                     _LATA:	
+   190  0053                     	ds	1
+   191  0054                     _LATB:	
+   192  0054                     	ds	1
+   193  0055                     _LATC:	
+   194  0055                     	ds	1
+   195  0056                     _LATD:	
+   196  0056                     	ds	1
+   197  0057                     _activeADChannel:	
+   198  0057                     	ds	1
+   199  0058                     _buttonInterrupt:	
+   200  0058                     	ds	1
+   201  0059                     _currentConditions:	
+   202  0059                     	ds	1
+   203  005A                     _generalAlarmCause:	
+   204  005A                     	ds	1
+   205  005B                     _generalInterrupt:	
+   206  005B                     	ds	1
+   207  005C                     _generalTroubleCause:	
+   208  005C                     	ds	1
+   209  005D                     _generalTroubleInterrupt:	
+   210  005D                     	ds	1
+   211  005E                     _ledControl:	
+   212  005E                     	ds	1
+   213  005F                     _nacTroubleCause:	
+   214  005F                     	ds	1
+   215  0060                     _nacTroubleInterrupt:	
+   216  0060                     	ds	1
+   217  0061                     _preAlarmCause:	
+   218  0061                     	ds	1
+   219  0062                     _preAlarmControl:	
+   220  0062                     	ds	1
+   221  0063                     _resetCounter:	
+   222  0063                     	ds	1
+   223  0064                     _slcControl:	
+   224  0064                     	ds	1
+   225  0065                     _slcTroubleCause:	
+   226  0065                     	ds	1
+   227  0066                     _slcTroubleInterrupt:	
+   228  0066                     	ds	1
+   229  0067                     _utilityCounter:	
+   230  0067                     	ds	1
+   231                           
+   232                           	psect	dataBANK0
+   233  0068                     __pdataBANK0:	
+   234  0068                     _coderControl:	
+   235  0068                     	ds	1
+   236  0069                     _coderCounter:	
+   237  0069                     	ds	1
+   238  006A                     _nacControl:	
+   239  006A                     	ds	1
+   240  006B                     _nacTypeControl:	
+   241  006B                     	ds	1
+   242                           
+   243                           	psect	clrtext
+   244  0780                     clear_ram0:	
+   245                           ;	Called with FSR containing the base address, and
+   246                           ;	W with the last address+1
+   247                           
+   248  0780  0064               	clrwdt	;clear the watchdog before getting into this loop
+   249  0781                     clrloop0:	
+   250  0781  0180               	clrf	0	;clear RAM location pointed to by FSR
+   251  0782  0A84               	incf	4,f	;increment pointer
+   252  0783  0604               	xorwf	4,w	;XOR with final address
+   253  0784  1903               	btfsc	3,2	;have we reached the end yet?
+   254  0785  3400               	retlw	0	;all done for this memory range, return
+   255  0786  0604               	xorwf	4,w	;XOR again to restore value
+   256  0787  2F81               	goto	clrloop0	;do the next byte
+   257                           
+   258                           	psect	cstackCOMMON
+   259  0070                     __pcstackCOMMON:	
+   260  0070                     ?_hardwareInterruptISR:	
+   261  0070                     ??_hardwareInterruptISR:	
+   262                           ; 1 bytes @ 0x0
+   263                           
+   264  0070                     ?_softwareISR:	
+   265                           ; 1 bytes @ 0x0
+   266                           
+   267  0070                     ?_main:	
+   268                           ; 1 bytes @ 0x0
+   269                           
+   270                           
+   271                           ; 1 bytes @ 0x0
+   272  0070                     	ds	8
+   273                           
+   274                           	psect	cstackBANK0
+   275  0020                     __pcstackBANK0:	
+   276  0020                     ??_softwareISR:	
+   277                           
+   278                           ; 1 bytes @ 0x0
+   279  0020                     	ds	25
+   280  0039                     ??_main:	
+   281                           
+   282                           ; 1 bytes @ 0x19
+   283  0039                     	ds	26
+   284                           
+   285                           	psect	maintext
+   286  044B                     __pmaintext:	
+   287 ;;
+   288 ;;Main: autosize = 0, tempsize = 26, incstack = 0, save=0
+   289 ;;
+   290 ;; *************** function _main *****************
+   291 ;; Defined at:
+   292 ;;		line 411 in file "Main.c"
+   293 ;; Parameters:    Size  Location     Type
+   294 ;;		None
+   295 ;; Auto vars:     Size  Location     Type
+   296 ;;		None
+   297 ;; Return value:  Size  Location     Type
+   298 ;;                  1    wreg      void 
+   299 ;; Registers used:
+   300 ;;		wreg, status,2, status,0, btemp+1, pclath, cstack
+   301 ;; Tracked objects:
+   302 ;;		On entry : B00/0
+   303 ;;		On exit  : 0/0
+   304 ;;		Unchanged: 0/0
+   305 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   306 ;;      Params:         0       0       0       0
+   307 ;;      Locals:         0       0       0       0
+   308 ;;      Temps:          0      26       0       0
+   309 ;;      Totals:         0      26       0       0
+   310 ;;Total ram usage:       26 bytes
+   311 ;; Hardware stack levels required when called:    2
+   312 ;; This function calls:
+   313 ;;		_softwareISR
+   314 ;; This function is called by:
+   315 ;;		Startup code after reset
+   316 ;; This function uses a non-reentrant model
+   317 ;;
+   318                           
+   319                           
+   320                           ;psect for function _main
+   321  044B                     _main:	
+   322                           
+   323                           ;Main.c: 415: OSCCON = 0x60;
+   324                           
+   325                           ;incstack = 0
+   326                           ; Regs used in _main: [wreg+status,2+status,0+btemp+1+pclath+cstack]
+   327  044B  3060               	movlw	96
+   328  044C  1683               	bsf	3,5	;RP0=1, select bank1
+   329  044D  1303               	bcf	3,6	;RP1=0, select bank1
+   330  044E  008F               	movwf	15	;volatile
+   331                           
+   332                           ;Main.c: 416: OPTION_REG = 0xD7;
+   333  044F  30D7               	movlw	215
+   334  0450  0081               	movwf	1	;volatile
+   335                           
+   336                           ;Main.c: 417: WDTCON = 0x00;
+   337  0451  1283               	bcf	3,5	;RP0=0, select bank2
+   338  0452  1703               	bsf	3,6	;RP1=1, select bank2
+   339  0453  0185               	clrf	5	;volatile
+   340                           
+   341                           ;Main.c: 420: TRISA = 0x0F;
+   342  0454  300F               	movlw	15
+   343  0455  1683               	bsf	3,5	;RP0=1, select bank1
+   344  0456  1303               	bcf	3,6	;RP1=0, select bank1
+   345  0457  0085               	movwf	5	;volatile
+   346                           
+   347                           ;Main.c: 421: TRISB = 0xBF;
+   348  0458  30BF               	movlw	191
+   349  0459  0086               	movwf	6	;volatile
+   350                           
+   351                           ;Main.c: 422: TRISC = 0xFF;
+   352  045A  30FF               	movlw	255
+   353  045B  0087               	movwf	7	;volatile
+   354                           
+   355                           ;Main.c: 423: TRISD = 0x0F;
+   356  045C  300F               	movlw	15
+   357  045D  0088               	movwf	8	;volatile
+   358                           
+   359                           ;Main.c: 424: TRISE = 0x0F;
+   360  045E  300F               	movlw	15
+   361  045F  0089               	movwf	9	;volatile
+   362                           
+   363                           ;Main.c: 425: ANSEL = 0x0F;
+   364  0460  300F               	movlw	15
+   365  0461  1683               	bsf	3,5	;RP0=1, select bank3
+   366  0462  1703               	bsf	3,6	;RP1=1, select bank3
+   367  0463  0088               	movwf	8	;volatile
+   368                           
+   369                           ;Main.c: 426: ANSELH = 0x3F;
+   370  0464  303F               	movlw	63
+   371  0465  0089               	movwf	9	;volatile
+   372                           
+   373                           ;Main.c: 427: LATA = 0x00;
+   374  0466  1283               	bcf	3,5	;RP0=0, select bank0
+   375  0467  1303               	bcf	3,6	;RP1=0, select bank0
+   376  0468  01D3               	clrf	_LATA
+   377                           
+   378                           ;Main.c: 428: LATB = 0x00;
+   379  0469  01D4               	clrf	_LATB
+   380                           
+   381                           ;Main.c: 429: LATC = 0x00;
+   382  046A  01D5               	clrf	_LATC
+   383                           
+   384                           ;Main.c: 430: LATD = 0x00;
+   385  046B  01D6               	clrf	_LATD
+   386                           
+   387                           ;Main.c: 431: PORTA = LATA;
+   388  046C  0853               	movf	_LATA,w
+   389  046D  0085               	movwf	5	;volatile
+   390                           
+   391                           ;Main.c: 432: PORTB = LATB;
+   392  046E  0854               	movf	_LATB,w
+   393  046F  0086               	movwf	6	;volatile
+   394                           
+   395                           ;Main.c: 433: PORTC = LATC;
+   396  0470  0855               	movf	_LATC,w
+   397  0471  0087               	movwf	7	;volatile
+   398                           
+   399                           ;Main.c: 434: PORTD = LATD;
+   400  0472  0856               	movf	_LATD,w
+   401  0473  0088               	movwf	8	;volatile
+   402                           
+   403                           ;Main.c: 435: PORTE = 0x00;
+   404  0474  0189               	clrf	9	;volatile
+   405                           
+   406                           ;Main.c: 438: INTCON = 0xE0;
+   407  0475  30E0               	movlw	224
+   408  0476  008B               	movwf	11	;volatile
+   409                           
+   410                           ;Main.c: 439: PIE1 = 0x40;
+   411  0477  3040               	movlw	64
+   412  0478  1683               	bsf	3,5	;RP0=1, select bank1
+   413  0479  1303               	bcf	3,6	;RP1=0, select bank1
+   414  047A  008C               	movwf	12	;volatile
+   415                           
+   416                           ;Main.c: 442: ADCON1 = 0x80;
+   417  047B  3080               	movlw	128
+   418  047C  009F               	movwf	31	;volatile
+   419                           
+   420                           ;Main.c: 443: ADCON0 = 0x41;
+   421  047D  3041               	movlw	65
+   422  047E  1283               	bcf	3,5	;RP0=0, select bank0
+   423  047F  1303               	bcf	3,6	;RP1=0, select bank0
+   424  0480  009F               	movwf	31	;volatile
+   425                           
+   426                           ;Main.c: 445: generalTroubleCause = 0x00;
+   427  0481  01DC               	clrf	_generalTroubleCause
+   428  0482                     l1554:	
+   429                           ;Main.c: 448: while (0x01) {
+   430                           
+   431                           
+   432                           ;Main.c: 450: buttonTracker = (buttonTracker & 0x0F) << 0x04;
+   433  0482  086C               	movf	_buttonTracker,w
+   434  0483  390F               	andlw	15
+   435  0484  00B9               	movwf	??_main
+   436  0485  3003               	movlw	3
+   437  0486                     u1785:	
+   438  0486  1003               	clrc
+   439  0487  0DB9               	rlf	??_main,f
+   440  0488  3EFF               	addlw	-1
+   441  0489  1D03               	skipz
+   442  048A  2C86               	goto	u1785
+   443  048B  1003               	clrc
+   444  048C  0D39               	rlf	??_main,w
+   445  048D  00BA               	movwf	??_main+1
+   446  048E  083A               	movf	??_main+1,w
+   447  048F  00EC               	movwf	_buttonTracker
+   448                           
+   449                           ;Main.c: 451: buttonTracker |= PORTD & 0x0F ^ 0x0F;
+   450  0490  0808               	movf	8,w	;volatile
+   451  0491  390F               	andlw	15
+   452  0492  3A0F               	xorlw	15
+   453  0493  00B9               	movwf	??_main
+   454  0494  0839               	movf	??_main,w
+   455  0495  04EC               	iorwf	_buttonTracker,f
+   456                           
+   457                           ;Main.c: 452: buttonInterrupt |= ((buttonTracker & 0x01 ^ 0x01) & ((buttonTracker & 0x10
+      +                          ) >> 0x04)) |
+   458                           ;Main.c: 453: ((buttonTracker & 0x02 ^ 0x02) & ((buttonTracker & 0x20) >> 0x04)) |
+   459                           ;Main.c: 454: ((buttonTracker & 0x04 ^ 0x04) & ((buttonTracker & 0x40) >> 0x04)) |
+   460                           ;Main.c: 455: ((buttonTracker & 0x08 ^ 0x08) & ((buttonTracker & 0x80) >> 0x04));
+   461  0496  3008               	movlw	8
+   462  0497  056C               	andwf	_buttonTracker,w
+   463  0498  00B9               	movwf	??_main
+   464  0499  3008               	movlw	8
+   465  049A  0639               	xorwf	??_main,w
+   466  049B  00BA               	movwf	??_main+1
+   467  049C  086C               	movf	_buttonTracker,w
+   468  049D  00BB               	movwf	??_main+2
+   469  049E  3004               	movlw	4
+   470  049F                     u1795:	
+   471  049F  1003               	clrc
+   472  04A0  0CBB               	rrf	??_main+2,f
+   473  04A1  3EFF               	addlw	-1
+   474  04A2  1D03               	skipz
+   475  04A3  2C9F               	goto	u1795
+   476  04A4  083B               	movf	??_main+2,w
+   477  04A5  3908               	andlw	8
+   478  04A6  053A               	andwf	??_main+1,w
+   479  04A7  00BC               	movwf	??_main+3
+   480  04A8  3004               	movlw	4
+   481  04A9  056C               	andwf	_buttonTracker,w
+   482  04AA  00BD               	movwf	??_main+4
+   483  04AB  3004               	movlw	4
+   484  04AC  063D               	xorwf	??_main+4,w
+   485  04AD  00BE               	movwf	??_main+5
+   486  04AE  086C               	movf	_buttonTracker,w
+   487  04AF  00BF               	movwf	??_main+6
+   488  04B0  3004               	movlw	4
+   489  04B1                     u1805:	
+   490  04B1  1003               	clrc
+   491  04B2  0CBF               	rrf	??_main+6,f
+   492  04B3  3EFF               	addlw	-1
+   493  04B4  1D03               	skipz
+   494  04B5  2CB1               	goto	u1805
+   495  04B6  083F               	movf	??_main+6,w
+   496  04B7  3904               	andlw	4
+   497  04B8  053E               	andwf	??_main+5,w
+   498  04B9  00C0               	movwf	??_main+7
+   499  04BA  3002               	movlw	2
+   500  04BB  056C               	andwf	_buttonTracker,w
+   501  04BC  00C1               	movwf	??_main+8
+   502  04BD  3002               	movlw	2
+   503  04BE  0641               	xorwf	??_main+8,w
+   504  04BF  00C2               	movwf	??_main+9
+   505  04C0  086C               	movf	_buttonTracker,w
+   506  04C1  00C3               	movwf	??_main+10
+   507  04C2  3004               	movlw	4
+   508  04C3                     u1815:	
+   509  04C3  1003               	clrc
+   510  04C4  0CC3               	rrf	??_main+10,f
+   511  04C5  3EFF               	addlw	-1
+   512  04C6  1D03               	skipz
+   513  04C7  2CC3               	goto	u1815
+   514  04C8  0843               	movf	??_main+10,w
+   515  04C9  3902               	andlw	2
+   516  04CA  0542               	andwf	??_main+9,w
+   517  04CB  00C4               	movwf	??_main+11
+   518  04CC  086C               	movf	_buttonTracker,w
+   519  04CD  00C5               	movwf	??_main+12
+   520  04CE  3004               	movlw	4
+   521  04CF                     u1825:	
+   522  04CF  1003               	clrc
+   523  04D0  0CC5               	rrf	??_main+12,f
+   524  04D1  3EFF               	addlw	-1
+   525  04D2  1D03               	skipz
+   526  04D3  2CCF               	goto	u1825
+   527  04D4  3001               	movlw	1
+   528  04D5  0545               	andwf	??_main+12,w
+   529  04D6  00C6               	movwf	??_main+13
+   530  04D7  086C               	movf	_buttonTracker,w
+   531  04D8  3901               	andlw	1
+   532  04D9  3A01               	xorlw	1
+   533  04DA  0546               	andwf	??_main+13,w
+   534  04DB  0444               	iorwf	??_main+11,w
+   535  04DC  0440               	iorwf	??_main+7,w
+   536  04DD  043C               	iorwf	??_main+3,w
+   537  04DE  00C7               	movwf	??_main+14
+   538  04DF  0847               	movf	??_main+14,w
+   539  04E0  04D8               	iorwf	_buttonInterrupt,f
+   540                           
+   541                           ;Main.c: 458: generalTroubleTracker = (generalTroubleTracker & 0x0F) << 0x04;
+   542  04E1  086D               	movf	_generalTroubleTracker,w
+   543  04E2  390F               	andlw	15
+   544  04E3  00B9               	movwf	??_main
+   545  04E4  3003               	movlw	3
+   546  04E5                     u1835:	
+   547  04E5  1003               	clrc
+   548  04E6  0DB9               	rlf	??_main,f
+   549  04E7  3EFF               	addlw	-1
+   550  04E8  1D03               	skipz
+   551  04E9  2CE5               	goto	u1835
+   552  04EA  1003               	clrc
+   553  04EB  0D39               	rlf	??_main,w
+   554  04EC  00BA               	movwf	??_main+1
+   555  04ED  083A               	movf	??_main+1,w
+   556  04EE  00ED               	movwf	_generalTroubleTracker
+   557                           
+   558                           ;Main.c: 459: generalTroubleTracker |= ((PORTB & 0x80 ^ 0x80) >> 0x07);
+   559  04EF  3080               	movlw	128
+   560  04F0  0506               	andwf	6,w	;volatile
+   561  04F1  00B9               	movwf	??_main
+   562  04F2  3080               	movlw	128
+   563  04F3  0639               	xorwf	??_main,w
+   564  04F4  00BA               	movwf	??_main+1
+   565  04F5  3000               	movlw	0
+   566  04F6  00BB               	movwf	??_main+2
+   567  04F7  3007               	movlw	7
+   568  04F8  00FF               	movwf	127
+   569  04F9                     u1845:	
+   570  04F9  0D3B               	rlf	??_main+2,w
+   571  04FA  0CBB               	rrf	??_main+2,f
+   572  04FB  0CBA               	rrf	??_main+1,f
+   573  04FC  0BFF               	decfsz	127,f
+   574  04FD  2CF9               	goto	u1845
+   575  04FE  083A               	movf	??_main+1,w
+   576  04FF  00BC               	movwf	??_main+3
+   577  0500  083C               	movf	??_main+3,w
+   578  0501  04ED               	iorwf	_generalTroubleTracker,f
+   579                           
+   580                           ;Main.c: 460: generalTroubleInterrupt |= ((generalTroubleTracker & 0x01 ^ 0x01) & ((gene
+      +                          ralTroubleTracker & 0x10) >> 0x04));
+   581  0502  086D               	movf	_generalTroubleTracker,w
+   582  0503  00B9               	movwf	??_main
+   583  0504  3004               	movlw	4
+   584  0505                     u1855:	
+   585  0505  1003               	clrc
+   586  0506  0CB9               	rrf	??_main,f
+   587  0507  3EFF               	addlw	-1
+   588  0508  1D03               	skipz
+   589  0509  2D05               	goto	u1855
+   590  050A  3001               	movlw	1
+   591  050B  0539               	andwf	??_main,w
+   592  050C  00BA               	movwf	??_main+1
+   593  050D  086D               	movf	_generalTroubleTracker,w
+   594  050E  3901               	andlw	1
+   595  050F  3A01               	xorlw	1
+   596  0510  053A               	andwf	??_main+1,w
+   597  0511  00BB               	movwf	??_main+2
+   598  0512  083B               	movf	??_main+2,w
+   599  0513  04DD               	iorwf	_generalTroubleInterrupt,f
+   600                           
+   601                           ;Main.c: 462: softwareISR();
+   602  0514  118A  2032  118A   	fcall	_softwareISR
+   603                           
+   604                           ;Main.c: 465: LATD &= 0x0F;
+   605  0517  300F               	movlw	15
+   606  0518  1283               	bcf	3,5	;RP0=0, select bank0
+   607  0519  1303               	bcf	3,6	;RP1=0, select bank0
+   608  051A  00B9               	movwf	??_main
+   609  051B  0839               	movf	??_main,w
+   610  051C  05D6               	andwf	_LATD,f
+   611                           
+   612                           ;Main.c: 466: LATD |= (generalTroubleCause & 0x01 ^ 0x01) << 0x04;
+   613  051D  085C               	movf	_generalTroubleCause,w
+   614  051E  3901               	andlw	1
+   615  051F  00B9               	movwf	??_main
+   616  0520  3003               	movlw	3
+   617  0521                     u1865:	
+   618  0521  1003               	clrc
+   619  0522  0DB9               	rlf	??_main,f
+   620  0523  3EFF               	addlw	-1
+   621  0524  1D03               	skipz
+   622  0525  2D21               	goto	u1865
+   623  0526  1003               	clrc
+   624  0527  0D39               	rlf	??_main,w
+   625  0528  3A10               	xorlw	16
+   626  0529  00BA               	movwf	??_main+1
+   627  052A  083A               	movf	??_main+1,w
+   628  052B  04D6               	iorwf	_LATD,f
+   629                           
+   630                           ;Main.c: 467: LATD |= ((ledControl & 0x80) >> 0x02) & ((ledControl & 0x02) << 0x04) | ((
+      +                          ledControl & 0x10) << 0x01);
+   631  052C  085E               	movf	_ledControl,w
+   632  052D  3910               	andlw	16
+   633  052E  00B9               	movwf	??_main
+   634  052F  3001               	movlw	1
+   635  0530                     u1875:	
+   636  0530  1003               	clrc
+   637  0531  0DB9               	rlf	??_main,f
+   638  0532  3EFF               	addlw	-1
+   639  0533  1D03               	skipz
+   640  0534  2D30               	goto	u1875
+   641  0535  085E               	movf	_ledControl,w
+   642  0536  3902               	andlw	2
+   643  0537  00BA               	movwf	??_main+1
+   644  0538  3004               	movlw	4
+   645  0539                     u1885:	
+   646  0539  1003               	clrc
+   647  053A  0DBA               	rlf	??_main+1,f
+   648  053B  3EFF               	addlw	-1
+   649  053C  1D03               	skipz
+   650  053D  2D39               	goto	u1885
+   651  053E  085E               	movf	_ledControl,w
+   652  053F  00BB               	movwf	??_main+2
+   653  0540  3002               	movlw	2
+   654  0541                     u1895:	
+   655  0541  1003               	clrc
+   656  0542  0CBB               	rrf	??_main+2,f
+   657  0543  3EFF               	addlw	-1
+   658  0544  1D03               	skipz
+   659  0545  2D41               	goto	u1895
+   660  0546  083B               	movf	??_main+2,w
+   661  0547  053A               	andwf	??_main+1,w
+   662  0548  3920               	andlw	32
+   663  0549  0439               	iorwf	??_main,w
+   664  054A  00BC               	movwf	??_main+3
+   665  054B  083C               	movf	??_main+3,w
+   666  054C  04D6               	iorwf	_LATD,f
+   667                           
+   668                           ;Main.c: 468: LATD |= ((ledControl & 0x80) >> 0x01) & ((ledControl & 0x04) << 0x04) | ((
+      +                          ledControl & 0x20) << 0x01);
+   669  054D  085E               	movf	_ledControl,w
+   670  054E  3920               	andlw	32
+   671  054F  00B9               	movwf	??_main
+   672  0550  3001               	movlw	1
+   673  0551                     u1905:	
+   674  0551  1003               	clrc
+   675  0552  0DB9               	rlf	??_main,f
+   676  0553  3EFF               	addlw	-1
+   677  0554  1D03               	skipz
+   678  0555  2D51               	goto	u1905
+   679  0556  085E               	movf	_ledControl,w
+   680  0557  3904               	andlw	4
+   681  0558  00BA               	movwf	??_main+1
+   682  0559  3004               	movlw	4
+   683  055A                     u1915:	
+   684  055A  1003               	clrc
+   685  055B  0DBA               	rlf	??_main+1,f
+   686  055C  3EFF               	addlw	-1
+   687  055D  1D03               	skipz
+   688  055E  2D5A               	goto	u1915
+   689  055F  085E               	movf	_ledControl,w
+   690  0560  00BB               	movwf	??_main+2
+   691  0561  1003               	clrc
+   692  0562  0C3B               	rrf	??_main+2,w
+   693  0563  053A               	andwf	??_main+1,w
+   694  0564  3940               	andlw	64
+   695  0565  0439               	iorwf	??_main,w
+   696  0566  00BC               	movwf	??_main+3
+   697  0567  083C               	movf	??_main+3,w
+   698  0568  04D6               	iorwf	_LATD,f
+   699                           
+   700                           ;Main.c: 469: LATD |= (ledControl & 0x08) << 0x04;
+   701  0569  085E               	movf	_ledControl,w
+   702  056A  3908               	andlw	8
+   703  056B  00B9               	movwf	??_main
+   704  056C  3003               	movlw	3
+   705  056D                     u1925:	
+   706  056D  1003               	clrc
+   707  056E  0DB9               	rlf	??_main,f
+   708  056F  3EFF               	addlw	-1
+   709  0570  1D03               	skipz
+   710  0571  2D6D               	goto	u1925
+   711  0572  1003               	clrc
+   712  0573  0D39               	rlf	??_main,w
+   713  0574  00BA               	movwf	??_main+1
+   714  0575  083A               	movf	??_main+1,w
+   715  0576  04D6               	iorwf	_LATD,f
+   716                           
+   717                           ;Main.c: 470: PORTD = LATD;
+   718  0577  0856               	movf	_LATD,w
+   719  0578  0088               	movwf	8	;volatile
+   720                           
+   721                           ;Main.c: 473: LATB &= 0xBF;
+   722  0579  30BF               	movlw	191
+   723  057A  00B9               	movwf	??_main
+   724  057B  0839               	movf	??_main,w
+   725  057C  05D4               	andwf	_LATB,f
+   726                           
+   727                           ;Main.c: 474: LATB |= ((ledControl & 0x01) << 0x06) & (ledControl & 0x40);
+   728  057D  3040               	movlw	64
+   729  057E  055E               	andwf	_ledControl,w
+   730  057F  00B9               	movwf	??_main
+   731  0580  085E               	movf	_ledControl,w
+   732  0581  3901               	andlw	1
+   733  0582  00BA               	movwf	??_main+1
+   734  0583  3005               	movlw	5
+   735  0584                     u1935:	
+   736  0584  1003               	clrc
+   737  0585  0DBA               	rlf	??_main+1,f
+   738  0586  3EFF               	addlw	-1
+   739  0587  1D03               	skipz
+   740  0588  2D84               	goto	u1935
+   741  0589  1003               	clrc
+   742  058A  0D3A               	rlf	??_main+1,w
+   743  058B  0539               	andwf	??_main,w
+   744  058C  00BB               	movwf	??_main+2
+   745  058D  083B               	movf	??_main+2,w
+   746  058E  04D4               	iorwf	_LATB,f
+   747                           
+   748                           ;Main.c: 475: PORTB = LATB;
+   749  058F  0854               	movf	_LATB,w
+   750  0590  0086               	movwf	6	;volatile
+   751                           
+   752                           ;Main.c: 478: LATA &= 0x0F;
+   753  0591  300F               	movlw	15
+   754  0592  00B9               	movwf	??_main
+   755  0593  0839               	movf	??_main,w
+   756  0594  05D3               	andwf	_LATA,f
+   757                           
+   758                           ;Main.c: 479: LATA |= ((((coderCounter & (0x01 << (coderControl & 0x03))) >> (coderContr
+      +                          ol & 0x03)) & (nacControl & 0x01)) << 0x04) |
+   759                           ;Main.c: 480: ((((coderCounter & (0x01 << ((coderControl & 0x0C) >> 0x02))) >> ((coderCo
+      +                          ntrol & 0x0C) >> 0x02)) & ((nacControl & 0x02) >> 0x01)) << 0x05) |
+   760                           ;Main.c: 481: ((((coderCounter & (0x01 << ((coderControl & 0x30) >> 0x04))) >> ((coderCo
+      +                          ntrol & 0x30) >> 0x04)) & ((nacControl & 0x04) >> 0x02)) << 0x06) |
+   761                           ;Main.c: 482: ((((coderCounter & (0x01 << ((coderControl & 0xC0) >> 0x06))) >> ((coderCo
+      +                          ntrol & 0xC0) >> 0x06)) & ((nacControl & 0x08) >> 0x03)) << 0x07);
+   762  0595  086A               	movf	_nacControl,w
+   763  0596  00B9               	movwf	??_main
+   764  0597  3003               	movlw	3
+   765  0598                     u1945:	
+   766  0598  1003               	clrc
+   767  0599  0CB9               	rrf	??_main,f
+   768  059A  3EFF               	addlw	-1
+   769  059B  1D03               	skipz
+   770  059C  2D98               	goto	u1945
+   771  059D  3001               	movlw	1
+   772  059E  0539               	andwf	??_main,w
+   773  059F  00BA               	movwf	??_main+1
+   774  05A0  3001               	movlw	1
+   775  05A1  00BB               	movwf	??_main+2
+   776  05A2  0868               	movf	_coderControl,w
+   777  05A3  00BC               	movwf	??_main+3
+   778  05A4  3006               	movlw	6
+   779  05A5                     u1955:	
+   780  05A5  1003               	clrc
+   781  05A6  0CBC               	rrf	??_main+3,f
+   782  05A7  3EFF               	addlw	-1
+   783  05A8  1D03               	skipz
+   784  05A9  2DA5               	goto	u1955
+   785  05AA  083C               	movf	??_main+3,w
+   786  05AB  3903               	andlw	3
+   787  05AC  3E01               	addlw	1
+   788  05AD  2DB0               	goto	u1964
+   789  05AE                     u1965:	
+   790  05AE  1003               	clrc
+   791  05AF  0DBB               	rlf	??_main+2,f
+   792  05B0                     u1964:	
+   793  05B0  3EFF               	addlw	-1
+   794  05B1  1D03               	skipz
+   795  05B2  2DAE               	goto	u1965
+   796  05B3  083B               	movf	??_main+2,w
+   797  05B4  0569               	andwf	_coderCounter,w
+   798  05B5  00BD               	movwf	??_main+4
+   799  05B6  0868               	movf	_coderControl,w
+   800  05B7  00BE               	movwf	??_main+5
+   801  05B8  3006               	movlw	6
+   802  05B9                     u1975:	
+   803  05B9  1003               	clrc
+   804  05BA  0CBE               	rrf	??_main+5,f
+   805  05BB  3EFF               	addlw	-1
+   806  05BC  1D03               	skipz
+   807  05BD  2DB9               	goto	u1975
+   808  05BE  083E               	movf	??_main+5,w
+   809  05BF  3903               	andlw	3
+   810  05C0  3E01               	addlw	1
+   811  05C1  2DC4               	goto	u1984
+   812  05C2                     u1985:	
+   813  05C2  1003               	clrc
+   814  05C3  0CBD               	rrf	??_main+4,f
+   815  05C4                     u1984:	
+   816  05C4  3EFF               	addlw	-1
+   817  05C5  1D03               	skipz
+   818  05C6  2DC2               	goto	u1985
+   819  05C7  083D               	movf	??_main+4,w
+   820  05C8  053A               	andwf	??_main+1,w
+   821  05C9  00BF               	movwf	??_main+6
+   822  05CA  3007               	movlw	7
+   823  05CB                     u1995:	
+   824  05CB  1003               	clrc
+   825  05CC  0DBF               	rlf	??_main+6,f
+   826  05CD  3EFF               	addlw	-1
+   827  05CE  1D03               	skipz
+   828  05CF  2DCB               	goto	u1995
+   829  05D0  086A               	movf	_nacControl,w
+   830  05D1  00C0               	movwf	??_main+7
+   831  05D2  3002               	movlw	2
+   832  05D3                     u2005:	
+   833  05D3  1003               	clrc
+   834  05D4  0CC0               	rrf	??_main+7,f
+   835  05D5  3EFF               	addlw	-1
+   836  05D6  1D03               	skipz
+   837  05D7  2DD3               	goto	u2005
+   838  05D8  3001               	movlw	1
+   839  05D9  0540               	andwf	??_main+7,w
+   840  05DA  00C1               	movwf	??_main+8
+   841  05DB  3001               	movlw	1
+   842  05DC  00C2               	movwf	??_main+9
+   843  05DD  0868               	movf	_coderControl,w
+   844  05DE  00C3               	movwf	??_main+10
+   845  05DF  3004               	movlw	4
+   846  05E0                     u2015:	
+   847  05E0  1003               	clrc
+   848  05E1  0CC3               	rrf	??_main+10,f
+   849  05E2  3EFF               	addlw	-1
+   850  05E3  1D03               	skipz
+   851  05E4  2DE0               	goto	u2015
+   852  05E5  0843               	movf	??_main+10,w
+   853  05E6  3903               	andlw	3
+   854  05E7  3E01               	addlw	1
+   855  05E8  2DEB               	goto	u2024
+   856  05E9                     u2025:	
+   857  05E9  1003               	clrc
+   858  05EA  0DC2               	rlf	??_main+9,f
+   859  05EB                     u2024:	
+   860  05EB  3EFF               	addlw	-1
+   861  05EC  1D03               	skipz
+   862  05ED  2DE9               	goto	u2025
+   863  05EE  0842               	movf	??_main+9,w
+   864  05EF  0569               	andwf	_coderCounter,w
+   865  05F0  00C4               	movwf	??_main+11
+   866  05F1  0868               	movf	_coderControl,w
+   867  05F2  00C5               	movwf	??_main+12
+   868  05F3  3004               	movlw	4
+   869  05F4                     u2035:	
+   870  05F4  1003               	clrc
+   871  05F5  0CC5               	rrf	??_main+12,f
+   872  05F6  3EFF               	addlw	-1
+   873  05F7  1D03               	skipz
+   874  05F8  2DF4               	goto	u2035
+   875  05F9  0845               	movf	??_main+12,w
+   876  05FA  3903               	andlw	3
+   877  05FB  3E01               	addlw	1
+   878  05FC  2DFF               	goto	u2044
+   879  05FD                     u2045:	
+   880  05FD  1003               	clrc
+   881  05FE  0CC4               	rrf	??_main+11,f
+   882  05FF                     u2044:	
+   883  05FF  3EFF               	addlw	-1
+   884  0600  1D03               	skipz
+   885  0601  2DFD               	goto	u2045
+   886  0602  0844               	movf	??_main+11,w
+   887  0603  0541               	andwf	??_main+8,w
+   888  0604  00C6               	movwf	??_main+13
+   889  0605  3006               	movlw	6
+   890  0606                     u2055:	
+   891  0606  1003               	clrc
+   892  0607  0DC6               	rlf	??_main+13,f
+   893  0608  3EFF               	addlw	-1
+   894  0609  1D03               	skipz
+   895  060A  2E06               	goto	u2055
+   896  060B  086A               	movf	_nacControl,w
+   897  060C  00C7               	movwf	??_main+14
+   898  060D  3001               	movlw	1
+   899  060E                     u2065:	
+   900  060E  1003               	clrc
+   901  060F  0CC7               	rrf	??_main+14,f
+   902  0610  3EFF               	addlw	-1
+   903  0611  1D03               	skipz
+   904  0612  2E0E               	goto	u2065
+   905  0613  3001               	movlw	1
+   906  0614  0547               	andwf	??_main+14,w
+   907  0615  00C8               	movwf	??_main+15
+   908  0616  3001               	movlw	1
+   909  0617  00C9               	movwf	??_main+16
+   910  0618  0868               	movf	_coderControl,w
+   911  0619  00CA               	movwf	??_main+17
+   912  061A  3002               	movlw	2
+   913  061B                     u2075:	
+   914  061B  1003               	clrc
+   915  061C  0CCA               	rrf	??_main+17,f
+   916  061D  3EFF               	addlw	-1
+   917  061E  1D03               	skipz
+   918  061F  2E1B               	goto	u2075
+   919  0620  084A               	movf	??_main+17,w
+   920  0621  3903               	andlw	3
+   921  0622  3E01               	addlw	1
+   922  0623  2E26               	goto	u2084
+   923  0624                     u2085:	
+   924  0624  1003               	clrc
+   925  0625  0DC9               	rlf	??_main+16,f
+   926  0626                     u2084:	
+   927  0626  3EFF               	addlw	-1
+   928  0627  1D03               	skipz
+   929  0628  2E24               	goto	u2085
+   930  0629  0849               	movf	??_main+16,w
+   931  062A  0569               	andwf	_coderCounter,w
+   932  062B  00CB               	movwf	??_main+18
+   933  062C  0868               	movf	_coderControl,w
+   934  062D  00CC               	movwf	??_main+19
+   935  062E  3002               	movlw	2
+   936  062F                     u2095:	
+   937  062F  1003               	clrc
+   938  0630  0CCC               	rrf	??_main+19,f
+   939  0631  3EFF               	addlw	-1
+   940  0632  1D03               	skipz
+   941  0633  2E2F               	goto	u2095
+   942  0634  084C               	movf	??_main+19,w
+   943  0635  3903               	andlw	3
+   944  0636  3E01               	addlw	1
+   945  0637  2E3A               	goto	u2104
+   946  0638                     u2105:	
+   947  0638  1003               	clrc
+   948  0639  0CCB               	rrf	??_main+18,f
+   949  063A                     u2104:	
+   950  063A  3EFF               	addlw	-1
+   951  063B  1D03               	skipz
+   952  063C  2E38               	goto	u2105
+   953  063D  084B               	movf	??_main+18,w
+   954  063E  0548               	andwf	??_main+15,w
+   955  063F  00CD               	movwf	??_main+20
+   956  0640  3005               	movlw	5
+   957  0641                     u2115:	
+   958  0641  1003               	clrc
+   959  0642  0DCD               	rlf	??_main+20,f
+   960  0643  3EFF               	addlw	-1
+   961  0644  1D03               	skipz
+   962  0645  2E41               	goto	u2115
+   963  0646  3001               	movlw	1
+   964  0647  056A               	andwf	_nacControl,w
+   965  0648  00CE               	movwf	??_main+21
+   966  0649  3001               	movlw	1
+   967  064A  00CF               	movwf	??_main+22
+   968  064B  0868               	movf	_coderControl,w
+   969  064C  3903               	andlw	3
+   970  064D  3E01               	addlw	1
+   971  064E  2E51               	goto	u2124
+   972  064F                     u2125:	
+   973  064F  1003               	clrc
+   974  0650  0DCF               	rlf	??_main+22,f
+   975  0651                     u2124:	
+   976  0651  3EFF               	addlw	-1
+   977  0652  1D03               	skipz
+   978  0653  2E4F               	goto	u2125
+   979  0654  084F               	movf	??_main+22,w
+   980  0655  0569               	andwf	_coderCounter,w
+   981  0656  00D0               	movwf	??_main+23
+   982  0657  0868               	movf	_coderControl,w
+   983  0658  3903               	andlw	3
+   984  0659  3E01               	addlw	1
+   985  065A  2E5D               	goto	u2134
+   986  065B                     u2135:	
+   987  065B  1003               	clrc
+   988  065C  0CD0               	rrf	??_main+23,f
+   989  065D                     u2134:	
+   990  065D  3EFF               	addlw	-1
+   991  065E  1D03               	skipz
+   992  065F  2E5B               	goto	u2135
+   993  0660  0850               	movf	??_main+23,w
+   994  0661  054E               	andwf	??_main+21,w
+   995  0662  00D1               	movwf	??_main+24
+   996  0663  3003               	movlw	3
+   997  0664                     u2145:	
+   998  0664  1003               	clrc
+   999  0665  0DD1               	rlf	??_main+24,f
+  1000  0666  3EFF               	addlw	-1
+  1001  0667  1D03               	skipz
+  1002  0668  2E64               	goto	u2145
+  1003  0669  1003               	clrc
+  1004  066A  0D51               	rlf	??_main+24,w
+  1005  066B  044D               	iorwf	??_main+20,w
+  1006  066C  0446               	iorwf	??_main+13,w
+  1007  066D  043F               	iorwf	??_main+6,w
+  1008  066E  00D2               	movwf	??_main+25
+  1009  066F  0852               	movf	??_main+25,w
+  1010  0670  04D3               	iorwf	_LATA,f
+  1011                           
+  1012                           ;Main.c: 483: PORTA = LATA;
+  1013  0671  0853               	movf	_LATA,w
+  1014  0672  0085               	movwf	5	;volatile
+  1015  0673  2C82               	goto	l1554
+  1016  0674                     __end_of_main:	
+  1017                           
+  1018                           	psect	text1
+  1019  0032                     __ptext1:	
+  1020 ;; *************** function _softwareISR *****************
+  1021 ;; Defined at:
+  1022 ;;		line 168 in file "Main.c"
+  1023 ;; Parameters:    Size  Location     Type
+  1024 ;;		None
+  1025 ;; Auto vars:     Size  Location     Type
+  1026 ;;		None
+  1027 ;; Return value:  Size  Location     Type
+  1028 ;;                  1    wreg      void 
+  1029 ;; Registers used:
+  1030 ;;		wreg, status,2, status,0, btemp+1
+  1031 ;; Tracked objects:
+  1032 ;;		On entry : 0/0
+  1033 ;;		On exit  : 0/0
+  1034 ;;		Unchanged: 0/0
+  1035 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1036 ;;      Params:         0       0       0       0
+  1037 ;;      Locals:         0       0       0       0
+  1038 ;;      Temps:          0      25       0       0
+  1039 ;;      Totals:         0      25       0       0
+  1040 ;;Total ram usage:       25 bytes
+  1041 ;; Hardware stack levels used:    1
+  1042 ;; Hardware stack levels required when called:    1
+  1043 ;; This function calls:
+  1044 ;;		Nothing
+  1045 ;; This function is called by:
+  1046 ;;		_main
+  1047 ;; This function uses a non-reentrant model
+  1048 ;;
+  1049                           
+  1050                           
+  1051                           ;psect for function _softwareISR
+  1052  0032                     _softwareISR:	
+  1053                           
+  1054                           ;Main.c: 171: if (slcAlarmInterrupt != 0x00 && slcAlarmInterrupt != ((generalAlarmCause 
+      +                          | preAlarmCause) & slcAlarmInterrupt)) {
+  1055                           
+  1056                           ;incstack = 0
+  1057                           ; Regs used in _softwareISR: [wreg+status,2+status,0+btemp+1]
+  1058  0032  087D               	movf	_slcAlarmInterrupt,w
+  1059  0033  1903               	btfsc	3,2
+  1060  0034  2850               	goto	l131
+  1061  0035  1283               	bcf	3,5	;RP0=0, select bank0
+  1062  0036  1303               	bcf	3,6	;RP1=0, select bank0
+  1063  0037  085A               	movf	_generalAlarmCause,w
+  1064  0038  0461               	iorwf	_preAlarmCause,w
+  1065  0039  057D               	andwf	_slcAlarmInterrupt,w
+  1066  003A  067D               	xorwf	_slcAlarmInterrupt,w
+  1067  003B  1903               	skipnz
+  1068  003C  2850               	goto	l131
+  1069                           
+  1070                           ;Main.c: 173: if (preAlarmCause == 0x00 && (preAlarmControl & 0x01) == 0x01) {
+  1071  003D  0861               	movf	_preAlarmCause,w
+  1072  003E  1903               	btfsc	3,2
+  1073  003F  1C62               	btfss	_preAlarmControl,0
+  1074  0040  2847               	goto	l1120
+  1075                           
+  1076                           ;Main.c: 174: preAlarmCause |= slcAlarmInterrupt;
+  1077  0041  087D               	movf	_slcAlarmInterrupt,w
+  1078  0042  00A0               	movwf	??_softwareISR
+  1079  0043  0820               	movf	??_softwareISR,w
+  1080  0044  04E1               	iorwf	_preAlarmCause,f
+  1081                           
+  1082                           ;Main.c: 175: generalInterrupt |= 0x01;
+  1083  0045  145B               	bsf	_generalInterrupt,0
+  1084                           
+  1085                           ;Main.c: 176: } else {
+  1086  0046  284C               	goto	l133
+  1087  0047                     l1120:	
+  1088                           
+  1089                           ;Main.c: 177: generalAlarmCause |= slcAlarmInterrupt;
+  1090  0047  087D               	movf	_slcAlarmInterrupt,w
+  1091  0048  00A0               	movwf	??_softwareISR
+  1092  0049  0820               	movf	??_softwareISR,w
+  1093  004A  04DA               	iorwf	_generalAlarmCause,f
+  1094                           
+  1095                           ;Main.c: 178: generalInterrupt |= 0x02;
+  1096  004B  14DB               	bsf	_generalInterrupt,1
+  1097  004C                     l133:	
+  1098                           
+  1099                           ;Main.c: 179: }
+  1100                           ;Main.c: 181: slcAlarmInterrupt &= slcAlarmInterrupt ^ 0xFF;
+  1101  004C  097D               	comf	_slcAlarmInterrupt,w
+  1102  004D  00A0               	movwf	??_softwareISR
+  1103  004E  0820               	movf	??_softwareISR,w
+  1104  004F  05FD               	andwf	_slcAlarmInterrupt,f
+  1105  0050                     l131:	
+  1106                           
+  1107                           ;Main.c: 182: }
+  1108                           ;Main.c: 185: if (slcAlarmInterrupt != 0x00 && slcAlarmInterrupt == ((generalAlarmCause)
+      +                           & slcAlarmInterrupt)) {
+  1109  0050  087D               	movf	_slcAlarmInterrupt,w
+  1110  0051  1903               	btfsc	3,2
+  1111  0052  285E               	goto	l134
+  1112  0053  1283               	bcf	3,5	;RP0=0, select bank0
+  1113  0054  1303               	bcf	3,6	;RP1=0, select bank0
+  1114  0055  085A               	movf	_generalAlarmCause,w
+  1115  0056  057D               	andwf	_slcAlarmInterrupt,w
+  1116  0057  067D               	xorwf	_slcAlarmInterrupt,w
+  1117  0058  1D03               	skipz
+  1118  0059  285E               	goto	l134
+  1119                           
+  1120                           ;Main.c: 188: slcAlarmInterrupt &= slcAlarmInterrupt ^ 0xFF;
+  1121  005A  097D               	comf	_slcAlarmInterrupt,w
+  1122  005B  00A0               	movwf	??_softwareISR
+  1123  005C  0820               	movf	??_softwareISR,w
+  1124  005D  05FD               	andwf	_slcAlarmInterrupt,f
+  1125  005E                     l134:	
+  1126                           
+  1127                           ;Main.c: 189: }
+  1128                           ;Main.c: 192: if (slcTroubleInterrupt != 0x00 && slcTroubleInterrupt != (slcTroubleCause
+      +                           & slcTroubleInterrupt)) {
+  1129  005E  1283               	bcf	3,5	;RP0=0, select bank0
+  1130  005F  1303               	bcf	3,6	;RP1=0, select bank0
+  1131  0060  0866               	movf	_slcTroubleInterrupt,w
+  1132  0061  1903               	btfsc	3,2
+  1133  0062  2871               	goto	l135
+  1134  0063  0865               	movf	_slcTroubleCause,w
+  1135  0064  0566               	andwf	_slcTroubleInterrupt,w
+  1136  0065  0666               	xorwf	_slcTroubleInterrupt,w
+  1137  0066  1903               	skipnz
+  1138  0067  2871               	goto	l135
+  1139                           
+  1140                           ;Main.c: 193: slcTroubleCause |= slcTroubleInterrupt;
+  1141  0068  0866               	movf	_slcTroubleInterrupt,w
+  1142  0069  00A0               	movwf	??_softwareISR
+  1143  006A  0820               	movf	??_softwareISR,w
+  1144  006B  04E5               	iorwf	_slcTroubleCause,f
+  1145                           
+  1146                           ;Main.c: 194: generalInterrupt |= 0x04;
+  1147  006C  155B               	bsf	_generalInterrupt,2
+  1148                           
+  1149                           ;Main.c: 196: slcTroubleInterrupt &= slcTroubleInterrupt ^ 0xFF;
+  1150  006D  0966               	comf	_slcTroubleInterrupt,w
+  1151  006E  00A0               	movwf	??_softwareISR
+  1152  006F  0820               	movf	??_softwareISR,w
+  1153  0070  05E6               	andwf	_slcTroubleInterrupt,f
+  1154  0071                     l135:	
+  1155                           
+  1156                           ;Main.c: 197: }
+  1157                           ;Main.c: 200: if (slcTroubleInterrupt != 0x00 && slcTroubleInterrupt != (slcTroubleCause
+      +                           & slcTroubleInterrupt)) {
+  1158  0071  0866               	movf	_slcTroubleInterrupt,w
+  1159  0072  1903               	btfsc	3,2
+  1160  0073  2881               	goto	l136
+  1161  0074  0865               	movf	_slcTroubleCause,w
+  1162  0075  0566               	andwf	_slcTroubleInterrupt,w
+  1163  0076  0666               	xorwf	_slcTroubleInterrupt,w
+  1164  0077  1903               	skipnz
+  1165  0078  2881               	goto	l136
+  1166                           
+  1167                           ;Main.c: 201: slcTroubleInterrupt &= 0xFF ^ slcTroubleInterrupt;
+  1168  0079  0966               	comf	_slcTroubleInterrupt,w
+  1169  007A  00A0               	movwf	??_softwareISR
+  1170  007B  0820               	movf	??_softwareISR,w
+  1171  007C  05E6               	andwf	_slcTroubleInterrupt,f
+  1172                           
+  1173                           ;Main.c: 203: slcTroubleInterrupt &= slcTroubleInterrupt ^ 0xFF;
+  1174  007D  0966               	comf	_slcTroubleInterrupt,w
+  1175  007E  00A0               	movwf	??_softwareISR
+  1176  007F  0820               	movf	??_softwareISR,w
+  1177  0080  05E6               	andwf	_slcTroubleInterrupt,f
+  1178  0081                     l136:	
+  1179                           
+  1180                           ;Main.c: 204: }
+  1181                           ;Main.c: 209: if (nacTroubleInterrupt != 0x00 && nacTroubleInterrupt != (nacTroubleCause
+      +                           & nacTroubleInterrupt)) {
+  1182  0081  0860               	movf	_nacTroubleInterrupt,w
+  1183  0082  1903               	btfsc	3,2
+  1184  0083  2892               	goto	l137
+  1185  0084  085F               	movf	_nacTroubleCause,w
+  1186  0085  0560               	andwf	_nacTroubleInterrupt,w
+  1187  0086  0660               	xorwf	_nacTroubleInterrupt,w
+  1188  0087  1903               	skipnz
+  1189  0088  2892               	goto	l137
+  1190                           
+  1191                           ;Main.c: 210: nacTroubleCause |= nacTroubleInterrupt;
+  1192  0089  0860               	movf	_nacTroubleInterrupt,w
+  1193  008A  00A0               	movwf	??_softwareISR
+  1194  008B  0820               	movf	??_softwareISR,w
+  1195  008C  04DF               	iorwf	_nacTroubleCause,f
+  1196                           
+  1197                           ;Main.c: 211: generalInterrupt |= 0x04;
+  1198  008D  155B               	bsf	_generalInterrupt,2
+  1199                           
+  1200                           ;Main.c: 213: nacTroubleInterrupt &= nacTroubleInterrupt ^ 0xFF;
+  1201  008E  0960               	comf	_nacTroubleInterrupt,w
+  1202  008F  00A0               	movwf	??_softwareISR
+  1203  0090  0820               	movf	??_softwareISR,w
+  1204  0091  05E0               	andwf	_nacTroubleInterrupt,f
+  1205  0092                     l137:	
+  1206                           
+  1207                           ;Main.c: 214: }
+  1208                           ;Main.c: 217: if (nacTroubleInterrupt != 0x00 & nacTroubleInterrupt == (nacTroubleCause 
+      +                          & nacTroubleInterrupt)) {
+  1209  0092  0860               	movf	_nacTroubleInterrupt,w
+  1210  0093  1903               	btfsc	3,2
+  1211  0094  28A2               	goto	l1148
+  1212  0095  085F               	movf	_nacTroubleCause,w
+  1213  0096  0560               	andwf	_nacTroubleInterrupt,w
+  1214  0097  0660               	xorwf	_nacTroubleInterrupt,w
+  1215  0098  1D03               	skipz
+  1216  0099  28A2               	goto	l1148
+  1217                           
+  1218                           ;Main.c: 218: nacTroubleCause &= 0xFF ^ nacTroubleInterrupt;
+  1219  009A  0960               	comf	_nacTroubleInterrupt,w
+  1220  009B  00A0               	movwf	??_softwareISR
+  1221  009C  0820               	movf	??_softwareISR,w
+  1222  009D  05DF               	andwf	_nacTroubleCause,f
+  1223                           
+  1224                           ;Main.c: 220: nacTroubleInterrupt &= nacTroubleInterrupt ^ 0xFF;
+  1225  009E  0960               	comf	_nacTroubleInterrupt,w
+  1226  009F  00A0               	movwf	??_softwareISR
+  1227  00A0  0820               	movf	??_softwareISR,w
+  1228  00A1  05E0               	andwf	_nacTroubleInterrupt,f
+  1229  00A2                     l1148:	
+  1230                           
+  1231                           ;Main.c: 221: }
+  1232                           ;Main.c: 226: if ((generalTroubleInterrupt & 0x01) == 0x01) {
+  1233  00A2  1C5D               	btfss	_generalTroubleInterrupt,0
+  1234  00A3  28A8               	goto	l1152
+  1235                           
+  1236                           ;Main.c: 227: generalTroubleInterrupt &= 0xFE;
+  1237  00A4  30FE               	movlw	254
+  1238  00A5  00A0               	movwf	??_softwareISR
+  1239  00A6  0820               	movf	??_softwareISR,w
+  1240  00A7  05DD               	andwf	_generalTroubleInterrupt,f
+  1241  00A8                     l1152:	
+  1242                           
+  1243                           ;Main.c: 232: }
+  1244                           ;Main.c: 237: if ((generalInterrupt & 0x01) == 0x01) {
+  1245  00A8  1C5B               	btfss	_generalInterrupt,0
+  1246  00A9  28C9               	goto	l1158
+  1247                           
+  1248                           ;Main.c: 238: generalInterrupt &= 0xFE;
+  1249  00AA  30FE               	movlw	254
+  1250  00AB  00A0               	movwf	??_softwareISR
+  1251  00AC  0820               	movf	??_softwareISR,w
+  1252  00AD  05DB               	andwf	_generalInterrupt,f
+  1253                           
+  1254                           ;Main.c: 240: nacControl |= ((nacControl & 0xF0 ^ 0xF0) & (nacTypeControl & 0xF0)) >> 0x
+      +                          04;
+  1255  00AE  30F0               	movlw	240
+  1256  00AF  056B               	andwf	_nacTypeControl,w
+  1257  00B0  00A0               	movwf	??_softwareISR
+  1258  00B1  086A               	movf	_nacControl,w
+  1259  00B2  39F0               	andlw	240
+  1260  00B3  3AF0               	xorlw	240
+  1261  00B4  0520               	andwf	??_softwareISR,w
+  1262  00B5  00A1               	movwf	??_softwareISR+1
+  1263  00B6  3004               	movlw	4
+  1264  00B7                     u1245:	
+  1265  00B7  1003               	clrc
+  1266  00B8  0CA1               	rrf	??_softwareISR+1,f
+  1267  00B9  3EFF               	addlw	-1
+  1268  00BA  1D03               	skipz
+  1269  00BB  28B7               	goto	u1245
+  1270  00BC  0821               	movf	??_softwareISR+1,w
+  1271  00BD  00A2               	movwf	??_softwareISR+2
+  1272  00BE  0822               	movf	??_softwareISR+2,w
+  1273  00BF  04EA               	iorwf	_nacControl,f
+  1274                           
+  1275                           ;Main.c: 241: currentConditions |= 0x01;
+  1276  00C0  1459               	bsf	_currentConditions,0
+  1277                           
+  1278                           ;Main.c: 242: ledControl &= 0xEC;
+  1279  00C1  30EC               	movlw	236
+  1280  00C2  00A0               	movwf	??_softwareISR
+  1281  00C3  0820               	movf	??_softwareISR,w
+  1282  00C4  05DE               	andwf	_ledControl,f
+  1283                           
+  1284                           ;Main.c: 243: ledControl |= 0x03;
+  1285  00C5  3003               	movlw	3
+  1286  00C6  00A0               	movwf	??_softwareISR
+  1287  00C7  0820               	movf	??_softwareISR,w
+  1288  00C8  04DE               	iorwf	_ledControl,f
+  1289  00C9                     l1158:	
+  1290                           
+  1291                           ;Main.c: 244: }
+  1292                           ;Main.c: 247: if ((generalInterrupt & 0x02) == 0x02) {
+  1293  00C9  1CDB               	btfss	_generalInterrupt,1
+  1294  00CA  28EB               	goto	l1170
+  1295                           
+  1296                           ;Main.c: 248: generalInterrupt &= 0xFD;
+  1297  00CB  30FD               	movlw	253
+  1298  00CC  00A0               	movwf	??_softwareISR
+  1299  00CD  0820               	movf	??_softwareISR,w
+  1300  00CE  05DB               	andwf	_generalInterrupt,f
+  1301                           
+  1302                           ;Main.c: 250: nacControl |= (nacControl & 0xF0 ^ 0xF0) >> 0x04;
+  1303  00CF  30F0               	movlw	240
+  1304  00D0  056A               	andwf	_nacControl,w
+  1305  00D1  00A0               	movwf	??_softwareISR
+  1306  00D2  30F0               	movlw	240
+  1307  00D3  0620               	xorwf	??_softwareISR,w
+  1308  00D4  00A1               	movwf	??_softwareISR+1
+  1309  00D5  3000               	movlw	0
+  1310  00D6  00A2               	movwf	??_softwareISR+2
+  1311  00D7  3004               	movlw	4
+  1312  00D8  00FF               	movwf	127
+  1313  00D9                     u1265:	
+  1314  00D9  0D22               	rlf	??_softwareISR+2,w
+  1315  00DA  0CA2               	rrf	??_softwareISR+2,f
+  1316  00DB  0CA1               	rrf	??_softwareISR+1,f
+  1317  00DC  0BFF               	decfsz	127,f
+  1318  00DD  28D9               	goto	u1265
+  1319  00DE  0821               	movf	??_softwareISR+1,w
+  1320  00DF  00A3               	movwf	??_softwareISR+3
+  1321  00E0  0823               	movf	??_softwareISR+3,w
+  1322  00E1  04EA               	iorwf	_nacControl,f
+  1323                           
+  1324                           ;Main.c: 251: currentConditions |= 0x02;
+  1325  00E2  14D9               	bsf	_currentConditions,1
+  1326                           
+  1327                           ;Main.c: 252: ledControl &= 0xE4;
+  1328  00E3  30E4               	movlw	228
+  1329  00E4  00A0               	movwf	??_softwareISR
+  1330  00E5  0820               	movf	??_softwareISR,w
+  1331  00E6  05DE               	andwf	_ledControl,f
+  1332                           
+  1333                           ;Main.c: 253: ledControl |= 0x03;
+  1334  00E7  3003               	movlw	3
+  1335  00E8  00A0               	movwf	??_softwareISR
+  1336  00E9  0820               	movf	??_softwareISR,w
+  1337  00EA  04DE               	iorwf	_ledControl,f
+  1338  00EB                     l1170:	
+  1339                           
+  1340                           ;Main.c: 254: }
+  1341                           ;Main.c: 257: if ((generalInterrupt & 0x04) == 0x04) {
+  1342  00EB  1D5B               	btfss	_generalInterrupt,2
+  1343  00EC  28FA               	goto	l1176
+  1344                           
+  1345                           ;Main.c: 258: generalInterrupt &= 0xFB;
+  1346  00ED  30FB               	movlw	251
+  1347  00EE  00A0               	movwf	??_softwareISR
+  1348  00EF  0820               	movf	??_softwareISR,w
+  1349  00F0  05DB               	andwf	_generalInterrupt,f
+  1350                           
+  1351                           ;Main.c: 260: currentConditions |= 0x04;
+  1352  00F1  1559               	bsf	_currentConditions,2
+  1353                           
+  1354                           ;Main.c: 261: ledControl &= 0xDA;
+  1355  00F2  30DA               	movlw	218
+  1356  00F3  00A0               	movwf	??_softwareISR
+  1357  00F4  0820               	movf	??_softwareISR,w
+  1358  00F5  05DE               	andwf	_ledControl,f
+  1359                           
+  1360                           ;Main.c: 262: ledControl |= 0x05;
+  1361  00F6  3005               	movlw	5
+  1362  00F7  00A0               	movwf	??_softwareISR
+  1363  00F8  0820               	movf	??_softwareISR,w
+  1364  00F9  04DE               	iorwf	_ledControl,f
+  1365  00FA                     l1176:	
+  1366                           
+  1367                           ;Main.c: 263: }
+  1368                           ;Main.c: 266: if ((generalInterrupt & 0x80) == 0x80) {
+  1369  00FA  1FDB               	btfss	_generalInterrupt,7
+  1370  00FB  2BD2               	goto	l1416
+  1371                           
+  1372                           ;Main.c: 267: generalInterrupt &= 0x7F;
+  1373  00FC  307F               	movlw	127
+  1374  00FD  00A0               	movwf	??_softwareISR
+  1375  00FE  0820               	movf	??_softwareISR,w
+  1376  00FF  05DB               	andwf	_generalInterrupt,f
+  1377                           
+  1378                           ;Main.c: 269: activeADChannel++;
+  1379  0100  3001               	movlw	1
+  1380  0101  00A0               	movwf	??_softwareISR
+  1381  0102  0820               	movf	??_softwareISR,w
+  1382  0103  07D7               	addwf	_activeADChannel,f
+  1383                           
+  1384                           ;Main.c: 272: if ((activeADChannel & 0x0F) > 0x0D) {
+  1385  0104  300F               	movlw	15
+  1386  0105  0557               	andwf	_activeADChannel,w
+  1387  0106  00A0               	movwf	??_softwareISR
+  1388  0107  300E               	movlw	14
+  1389  0108  0220               	subwf	??_softwareISR,w
+  1390  0109  1C03               	skipc
+  1391  010A  2B59               	goto	l1210
+  1392                           
+  1393                           ;Main.c: 273: activeADChannel &= 0xF0;
+  1394  010B  30F0               	movlw	240
+  1395  010C  00A0               	movwf	??_softwareISR
+  1396  010D  0820               	movf	??_softwareISR,w
+  1397  010E  05D7               	andwf	_activeADChannel,f
+  1398                           
+  1399                           ;Main.c: 277: slcAlarmTracker ^= 0xFFFF;
+  1400  010F  30FF               	movlw	255
+  1401  0110  06F8               	xorwf	_slcAlarmTracker,f
+  1402  0111  30FF               	movlw	255
+  1403  0112  06F9               	xorwf	_slcAlarmTracker+1,f
+  1404                           
+  1405                           ;Main.c: 278: slcAlarmInterrupt |= ((slcAlarmTracker & 0x0001 ^ 0x0001) & ((slcAlarmTrac
+      +                          ker & 0x0100) >> 0x08)) |
+  1406                           ;Main.c: 279: ((slcAlarmTracker & 0x0002 ^ 0x0002) & ((slcAlarmTracker & 0x0200) >> 0x08
+      +                          )) |
+  1407                           ;Main.c: 280: ((slcAlarmTracker & 0x0004 ^ 0x0004) & ((slcAlarmTracker & 0x0400) >> 0x08
+      +                          )) |
+  1408                           ;Main.c: 281: ((slcAlarmTracker & 0x0008 ^ 0x0008) & ((slcAlarmTracker & 0x0800) >> 0x08
+      +                          )) |
+  1409                           ;Main.c: 282: ((slcAlarmTracker & 0x0010 ^ 0x0010) & ((slcAlarmTracker & 0x1000) >> 0x08
+      +                          )) |
+  1410                           ;Main.c: 283: ((slcAlarmTracker & 0x0020 ^ 0x0020) & ((slcAlarmTracker & 0x2000) >> 0x08
+      +                          )) |
+  1411  0113  3080               	movlw	128
+  1412  0114  0578               	andwf	_slcAlarmTracker,w
+  1413  0115  00A0               	movwf	??_softwareISR
+  1414  0116  3080               	movlw	128
+  1415  0117  0620               	xorwf	??_softwareISR,w
+  1416  0118  00A1               	movwf	??_softwareISR+1
+  1417  0119  0879               	movf	_slcAlarmTracker+1,w
+  1418  011A  3980               	andlw	128
+  1419  011B  0521               	andwf	??_softwareISR+1,w
+  1420  011C  00A2               	movwf	??_softwareISR+2
+  1421  011D  3040               	movlw	64
+  1422  011E  0578               	andwf	_slcAlarmTracker,w
+  1423  011F  00A3               	movwf	??_softwareISR+3
+  1424  0120  3040               	movlw	64
+  1425  0121  0623               	xorwf	??_softwareISR+3,w
+  1426  0122  00A4               	movwf	??_softwareISR+4
+  1427  0123  0879               	movf	_slcAlarmTracker+1,w
+  1428  0124  3940               	andlw	64
+  1429  0125  0524               	andwf	??_softwareISR+4,w
+  1430  0126  00A5               	movwf	??_softwareISR+5
+  1431  0127  3020               	movlw	32
+  1432  0128  0578               	andwf	_slcAlarmTracker,w
+  1433  0129  00A6               	movwf	??_softwareISR+6
+  1434  012A  3020               	movlw	32
+  1435  012B  0626               	xorwf	??_softwareISR+6,w
+  1436  012C  00A7               	movwf	??_softwareISR+7
+  1437  012D  0879               	movf	_slcAlarmTracker+1,w
+  1438  012E  3920               	andlw	32
+  1439  012F  0527               	andwf	??_softwareISR+7,w
+  1440  0130  00A8               	movwf	??_softwareISR+8
+  1441  0131  3010               	movlw	16
+  1442  0132  0578               	andwf	_slcAlarmTracker,w
+  1443  0133  00A9               	movwf	??_softwareISR+9
+  1444  0134  3010               	movlw	16
+  1445  0135  0629               	xorwf	??_softwareISR+9,w
+  1446  0136  00AA               	movwf	??_softwareISR+10
+  1447  0137  0879               	movf	_slcAlarmTracker+1,w
+  1448  0138  3910               	andlw	16
+  1449  0139  052A               	andwf	??_softwareISR+10,w
+  1450  013A  00AB               	movwf	??_softwareISR+11
+  1451  013B  3008               	movlw	8
+  1452  013C  0578               	andwf	_slcAlarmTracker,w
+  1453  013D  00AC               	movwf	??_softwareISR+12
+  1454  013E  3008               	movlw	8
+  1455  013F  062C               	xorwf	??_softwareISR+12,w
+  1456  0140  00AD               	movwf	??_softwareISR+13
+  1457  0141  0879               	movf	_slcAlarmTracker+1,w
+  1458  0142  3908               	andlw	8
+  1459  0143  052D               	andwf	??_softwareISR+13,w
+  1460  0144  00AE               	movwf	??_softwareISR+14
+  1461  0145  3004               	movlw	4
+  1462  0146  0578               	andwf	_slcAlarmTracker,w
+  1463  0147  00AF               	movwf	??_softwareISR+15
+  1464  0148  3004               	movlw	4
+  1465  0149  062F               	xorwf	??_softwareISR+15,w
+  1466  014A  00B0               	movwf	??_softwareISR+16
+  1467  014B  0879               	movf	_slcAlarmTracker+1,w
+  1468  014C  3904               	andlw	4
+  1469  014D  0530               	andwf	??_softwareISR+16,w
+  1470  014E  00B1               	movwf	??_softwareISR+17
+  1471  014F  3002               	movlw	2
+  1472  0150  0578               	andwf	_slcAlarmTracker,w
+  1473  0151  00B2               	movwf	??_softwareISR+18
+  1474  0152  3002               	movlw	2
+  1475  0153  0632               	xorwf	??_softwareISR+18,w
+  1476  0154  00B3               	movwf	??_softwareISR+19
+  1477  0155  0879               	movf	_slcAlarmTracker+1,w
+  1478  0156  3902               	andlw	2
+  1479  0157  0533               	andwf	??_softwareISR+19,w
+  1480  0158  00B4               	movwf	??_softwareISR+20
+  1481  0159  0879               	movf	_slcAlarmTracker+1,w
+  1482  015A  00B6               	movwf	??_softwareISR+22
+  1483  015B  0878               	movf	_slcAlarmTracker,w
+  1484  015C  00B5               	movwf	??_softwareISR+21
+  1485  015D  0836               	movf	??_softwareISR+22,w
+  1486  015E  00B5               	movwf	??_softwareISR+21
+  1487  015F  01B6               	clrf	??_softwareISR+22
+  1488  0160  3001               	movlw	1
+  1489  0161  0535               	andwf	??_softwareISR+21,w
+  1490  0162  00B7               	movwf	??_softwareISR+23
+  1491  0163  0878               	movf	_slcAlarmTracker,w
+  1492  0164  3901               	andlw	1
+  1493  0165  3A01               	xorlw	1
+  1494  0166  0537               	andwf	??_softwareISR+23,w
+  1495  0167  0434               	iorwf	??_softwareISR+20,w
+  1496  0168  0431               	iorwf	??_softwareISR+17,w
+  1497  0169  042E               	iorwf	??_softwareISR+14,w
+  1498  016A  042B               	iorwf	??_softwareISR+11,w
+  1499  016B  0428               	iorwf	??_softwareISR+8,w
+  1500  016C  0425               	iorwf	??_softwareISR+5,w
+  1501  016D  0422               	iorwf	??_softwareISR+2,w
+  1502  016E  00B8               	movwf	??_softwareISR+24
+  1503  016F  0838               	movf	??_softwareISR+24,w
+  1504  0170  04FD               	iorwf	_slcAlarmInterrupt,f
+  1505                           
+  1506                           ;Main.c: 289: slcAlarmInterrupt |= ((slcAlarmTracker & 0x0001 ^ 0x0001) & ((slcAlarmTrac
+      +                          ker & 0x0100) >> 0x08)) |
+  1507                           ;Main.c: 290: ((slcAlarmTracker & 0x0002 ^ 0x0002) & ((slcAlarmTracker & 0x0200) >> 0x08
+      +                          )) |
+  1508                           ;Main.c: 291: ((slcAlarmTracker & 0x0004 ^ 0x0004) & ((slcAlarmTracker & 0x0400) >> 0x08
+      +                          )) |
+  1509                           ;Main.c: 292: ((slcAlarmTracker & 0x0008 ^ 0x0008) & ((slcAlarmTracker & 0x0800) >> 0x08
+      +                          )) |
+  1510                           ;Main.c: 293: ((slcAlarmTracker & 0x0010 ^ 0x0010) & ((slcAlarmTracker & 0x1000) >> 0x08
+      +                          )) |
+  1511                           ;Main.c: 294: ((slcAlarmTracker & 0x0020 ^ 0x0020) & ((slcAlarmTracker & 0x2000) >> 0x08
+      +                          )) |
+  1512  0171  3080               	movlw	128
+  1513  0172  0578               	andwf	_slcAlarmTracker,w
+  1514  0173  00A0               	movwf	??_softwareISR
+  1515  0174  3080               	movlw	128
+  1516  0175  0620               	xorwf	??_softwareISR,w
+  1517  0176  00A1               	movwf	??_softwareISR+1
+  1518  0177  0879               	movf	_slcAlarmTracker+1,w
+  1519  0178  3980               	andlw	128
+  1520  0179  0521               	andwf	??_softwareISR+1,w
+  1521  017A  00A2               	movwf	??_softwareISR+2
+  1522  017B  3040               	movlw	64
+  1523  017C  0578               	andwf	_slcAlarmTracker,w
+  1524  017D  00A3               	movwf	??_softwareISR+3
+  1525  017E  3040               	movlw	64
+  1526  017F  0623               	xorwf	??_softwareISR+3,w
+  1527  0180  00A4               	movwf	??_softwareISR+4
+  1528  0181  0879               	movf	_slcAlarmTracker+1,w
+  1529  0182  3940               	andlw	64
+  1530  0183  0524               	andwf	??_softwareISR+4,w
+  1531  0184  00A5               	movwf	??_softwareISR+5
+  1532  0185  3020               	movlw	32
+  1533  0186  0578               	andwf	_slcAlarmTracker,w
+  1534  0187  00A6               	movwf	??_softwareISR+6
+  1535  0188  3020               	movlw	32
+  1536  0189  0626               	xorwf	??_softwareISR+6,w
+  1537  018A  00A7               	movwf	??_softwareISR+7
+  1538  018B  0879               	movf	_slcAlarmTracker+1,w
+  1539  018C  3920               	andlw	32
+  1540  018D  0527               	andwf	??_softwareISR+7,w
+  1541  018E  00A8               	movwf	??_softwareISR+8
+  1542  018F  3010               	movlw	16
+  1543  0190  0578               	andwf	_slcAlarmTracker,w
+  1544  0191  00A9               	movwf	??_softwareISR+9
+  1545  0192  3010               	movlw	16
+  1546  0193  0629               	xorwf	??_softwareISR+9,w
+  1547  0194  00AA               	movwf	??_softwareISR+10
+  1548  0195  0879               	movf	_slcAlarmTracker+1,w
+  1549  0196  3910               	andlw	16
+  1550  0197  052A               	andwf	??_softwareISR+10,w
+  1551  0198  00AB               	movwf	??_softwareISR+11
+  1552  0199  3008               	movlw	8
+  1553  019A  0578               	andwf	_slcAlarmTracker,w
+  1554  019B  00AC               	movwf	??_softwareISR+12
+  1555  019C  3008               	movlw	8
+  1556  019D  062C               	xorwf	??_softwareISR+12,w
+  1557  019E  00AD               	movwf	??_softwareISR+13
+  1558  019F  0879               	movf	_slcAlarmTracker+1,w
+  1559  01A0  3908               	andlw	8
+  1560  01A1  052D               	andwf	??_softwareISR+13,w
+  1561  01A2  00AE               	movwf	??_softwareISR+14
+  1562  01A3  3004               	movlw	4
+  1563  01A4  0578               	andwf	_slcAlarmTracker,w
+  1564  01A5  00AF               	movwf	??_softwareISR+15
+  1565  01A6  3004               	movlw	4
+  1566  01A7  062F               	xorwf	??_softwareISR+15,w
+  1567  01A8  00B0               	movwf	??_softwareISR+16
+  1568  01A9  0879               	movf	_slcAlarmTracker+1,w
+  1569  01AA  3904               	andlw	4
+  1570  01AB  0530               	andwf	??_softwareISR+16,w
+  1571  01AC  00B1               	movwf	??_softwareISR+17
+  1572  01AD  3002               	movlw	2
+  1573  01AE  0578               	andwf	_slcAlarmTracker,w
+  1574  01AF  00B2               	movwf	??_softwareISR+18
+  1575  01B0  3002               	movlw	2
+  1576  01B1  0632               	xorwf	??_softwareISR+18,w
+  1577  01B2  00B3               	movwf	??_softwareISR+19
+  1578  01B3  0879               	movf	_slcAlarmTracker+1,w
+  1579  01B4  3902               	andlw	2
+  1580  01B5  0533               	andwf	??_softwareISR+19,w
+  1581  01B6  00B4               	movwf	??_softwareISR+20
+  1582  01B7  0879               	movf	_slcAlarmTracker+1,w
+  1583  01B8  00B6               	movwf	??_softwareISR+22
+  1584  01B9  0878               	movf	_slcAlarmTracker,w
+  1585  01BA  00B5               	movwf	??_softwareISR+21
+  1586  01BB  0836               	movf	??_softwareISR+22,w
+  1587  01BC  00B5               	movwf	??_softwareISR+21
+  1588  01BD  01B6               	clrf	??_softwareISR+22
+  1589  01BE  3001               	movlw	1
+  1590  01BF  0535               	andwf	??_softwareISR+21,w
+  1591  01C0  00B7               	movwf	??_softwareISR+23
+  1592  01C1  0878               	movf	_slcAlarmTracker,w
+  1593  01C2  3901               	andlw	1
+  1594  01C3  3A01               	xorlw	1
+  1595  01C4  0537               	andwf	??_softwareISR+23,w
+  1596  01C5  0434               	iorwf	??_softwareISR+20,w
+  1597  01C6  0431               	iorwf	??_softwareISR+17,w
+  1598  01C7  042E               	iorwf	??_softwareISR+14,w
+  1599  01C8  042B               	iorwf	??_softwareISR+11,w
+  1600  01C9  0428               	iorwf	??_softwareISR+8,w
+  1601  01CA  0425               	iorwf	??_softwareISR+5,w
+  1602  01CB  0422               	iorwf	??_softwareISR+2,w
+  1603  01CC  00B8               	movwf	??_softwareISR+24
+  1604  01CD  0838               	movf	??_softwareISR+24,w
+  1605  01CE  04FD               	iorwf	_slcAlarmInterrupt,f
+  1606                           
+  1607                           ;Main.c: 297: slcAlarmTracker = (slcAlarmTracker & 0x00FF) << 0x08;
+  1608  01CF  30FF               	movlw	255
+  1609  01D0  0578               	andwf	_slcAlarmTracker,w
+  1610  01D1  00A0               	movwf	??_softwareISR
+  1611  01D2  3000               	movlw	0
+  1612  01D3  0579               	andwf	_slcAlarmTracker+1,w
+  1613  01D4  00A1               	movwf	??_softwareISR+1
+  1614  01D5  0820               	movf	??_softwareISR,w
+  1615  01D6  00A1               	movwf	??_softwareISR+1
+  1616  01D7  01A0               	clrf	??_softwareISR
+  1617  01D8  0820               	movf	??_softwareISR,w
+  1618  01D9  00F8               	movwf	_slcAlarmTracker
+  1619  01DA  0821               	movf	??_softwareISR+1,w
+  1620  01DB  00F9               	movwf	_slcAlarmTracker+1
+  1621                           
+  1622                           ;Main.c: 300: slcTroubleTracker ^= 0xFFFF;
+  1623  01DC  30FF               	movlw	255
+  1624  01DD  06FA               	xorwf	_slcTroubleTracker,f
+  1625  01DE  30FF               	movlw	255
+  1626  01DF  06FB               	xorwf	_slcTroubleTracker+1,f
+  1627                           
+  1628                           ;Main.c: 301: slcTroubleInterrupt |= ((slcTroubleTracker & 0x0001 ^ 0x0001) & ((slcTroub
+      +                          leTracker & 0x0100) >> 0x08)) |
+  1629                           ;Main.c: 302: ((slcTroubleTracker & 0x0002 ^ 0x0002) & ((slcTroubleTracker & 0x0200) >> 
+      +                          0x08)) |
+  1630                           ;Main.c: 303: ((slcTroubleTracker & 0x0004 ^ 0x0004) & ((slcTroubleTracker & 0x0400) >> 
+      +                          0x08)) |
+  1631                           ;Main.c: 304: ((slcTroubleTracker & 0x0008 ^ 0x0008) & ((slcTroubleTracker & 0x0800) >> 
+      +                          0x08)) |
+  1632                           ;Main.c: 305: ((slcTroubleTracker & 0x0010 ^ 0x0010) & ((slcTroubleTracker & 0x1000) >> 
+      +                          0x08)) |
+  1633                           ;Main.c: 306: ((slcTroubleTracker & 0x0020 ^ 0x0020) & ((slcTroubleTracker & 0x2000) >> 
+      +                          0x08)) |
+  1634  01E0  3080               	movlw	128
+  1635  01E1  057A               	andwf	_slcTroubleTracker,w
+  1636  01E2  00A0               	movwf	??_softwareISR
+  1637  01E3  3080               	movlw	128
+  1638  01E4  0620               	xorwf	??_softwareISR,w
+  1639  01E5  00A1               	movwf	??_softwareISR+1
+  1640  01E6  087B               	movf	_slcTroubleTracker+1,w
+  1641  01E7  3980               	andlw	128
+  1642  01E8  0521               	andwf	??_softwareISR+1,w
+  1643  01E9  00A2               	movwf	??_softwareISR+2
+  1644  01EA  3040               	movlw	64
+  1645  01EB  057A               	andwf	_slcTroubleTracker,w
+  1646  01EC  00A3               	movwf	??_softwareISR+3
+  1647  01ED  3040               	movlw	64
+  1648  01EE  0623               	xorwf	??_softwareISR+3,w
+  1649  01EF  00A4               	movwf	??_softwareISR+4
+  1650  01F0  087B               	movf	_slcTroubleTracker+1,w
+  1651  01F1  3940               	andlw	64
+  1652  01F2  0524               	andwf	??_softwareISR+4,w
+  1653  01F3  00A5               	movwf	??_softwareISR+5
+  1654  01F4  3020               	movlw	32
+  1655  01F5  057A               	andwf	_slcTroubleTracker,w
+  1656  01F6  00A6               	movwf	??_softwareISR+6
+  1657  01F7  3020               	movlw	32
+  1658  01F8  0626               	xorwf	??_softwareISR+6,w
+  1659  01F9  00A7               	movwf	??_softwareISR+7
+  1660  01FA  087B               	movf	_slcTroubleTracker+1,w
+  1661  01FB  3920               	andlw	32
+  1662  01FC  0527               	andwf	??_softwareISR+7,w
+  1663  01FD  00A8               	movwf	??_softwareISR+8
+  1664  01FE  3010               	movlw	16
+  1665  01FF  057A               	andwf	_slcTroubleTracker,w
+  1666  0200  00A9               	movwf	??_softwareISR+9
+  1667  0201  3010               	movlw	16
+  1668  0202  0629               	xorwf	??_softwareISR+9,w
+  1669  0203  00AA               	movwf	??_softwareISR+10
+  1670  0204  087B               	movf	_slcTroubleTracker+1,w
+  1671  0205  3910               	andlw	16
+  1672  0206  052A               	andwf	??_softwareISR+10,w
+  1673  0207  00AB               	movwf	??_softwareISR+11
+  1674  0208  3008               	movlw	8
+  1675  0209  057A               	andwf	_slcTroubleTracker,w
+  1676  020A  00AC               	movwf	??_softwareISR+12
+  1677  020B  3008               	movlw	8
+  1678  020C  062C               	xorwf	??_softwareISR+12,w
+  1679  020D  00AD               	movwf	??_softwareISR+13
+  1680  020E  087B               	movf	_slcTroubleTracker+1,w
+  1681  020F  3908               	andlw	8
+  1682  0210  052D               	andwf	??_softwareISR+13,w
+  1683  0211  00AE               	movwf	??_softwareISR+14
+  1684  0212  3004               	movlw	4
+  1685  0213  057A               	andwf	_slcTroubleTracker,w
+  1686  0214  00AF               	movwf	??_softwareISR+15
+  1687  0215  3004               	movlw	4
+  1688  0216  062F               	xorwf	??_softwareISR+15,w
+  1689  0217  00B0               	movwf	??_softwareISR+16
+  1690  0218  087B               	movf	_slcTroubleTracker+1,w
+  1691  0219  3904               	andlw	4
+  1692  021A  0530               	andwf	??_softwareISR+16,w
+  1693  021B  00B1               	movwf	??_softwareISR+17
+  1694  021C  3002               	movlw	2
+  1695  021D  057A               	andwf	_slcTroubleTracker,w
+  1696  021E  00B2               	movwf	??_softwareISR+18
+  1697  021F  3002               	movlw	2
+  1698  0220  0632               	xorwf	??_softwareISR+18,w
+  1699  0221  00B3               	movwf	??_softwareISR+19
+  1700  0222  087B               	movf	_slcTroubleTracker+1,w
+  1701  0223  3902               	andlw	2
+  1702  0224  0533               	andwf	??_softwareISR+19,w
+  1703  0225  00B4               	movwf	??_softwareISR+20
+  1704  0226  087B               	movf	_slcTroubleTracker+1,w
+  1705  0227  00B6               	movwf	??_softwareISR+22
+  1706  0228  087A               	movf	_slcTroubleTracker,w
+  1707  0229  00B5               	movwf	??_softwareISR+21
+  1708  022A  0836               	movf	??_softwareISR+22,w
+  1709  022B  00B5               	movwf	??_softwareISR+21
+  1710  022C  01B6               	clrf	??_softwareISR+22
+  1711  022D  3001               	movlw	1
+  1712  022E  0535               	andwf	??_softwareISR+21,w
+  1713  022F  00B7               	movwf	??_softwareISR+23
+  1714  0230  087A               	movf	_slcTroubleTracker,w
+  1715  0231  3901               	andlw	1
+  1716  0232  3A01               	xorlw	1
+  1717  0233  0537               	andwf	??_softwareISR+23,w
+  1718  0234  0434               	iorwf	??_softwareISR+20,w
+  1719  0235  0431               	iorwf	??_softwareISR+17,w
+  1720  0236  042E               	iorwf	??_softwareISR+14,w
+  1721  0237  042B               	iorwf	??_softwareISR+11,w
+  1722  0238  0428               	iorwf	??_softwareISR+8,w
+  1723  0239  0425               	iorwf	??_softwareISR+5,w
+  1724  023A  0422               	iorwf	??_softwareISR+2,w
+  1725  023B  00B8               	movwf	??_softwareISR+24
+  1726  023C  0838               	movf	??_softwareISR+24,w
+  1727  023D  04E6               	iorwf	_slcTroubleInterrupt,f
+  1728                           
+  1729                           ;Main.c: 311: slcTroubleTracker ^= 0xFFFF;
+  1730  023E  30FF               	movlw	255
+  1731  023F  06FA               	xorwf	_slcTroubleTracker,f
+  1732  0240  30FF               	movlw	255
+  1733  0241  06FB               	xorwf	_slcTroubleTracker+1,f
+  1734                           
+  1735                           ;Main.c: 312: slcTroubleInterrupt |= ((slcTroubleTracker & 0x0001 ^ 0x0001) & ((slcTroub
+      +                          leTracker & 0x0100) >> 0x08)) |
+  1736                           ;Main.c: 313: ((slcTroubleTracker & 0x0002 ^ 0x0002) & ((slcTroubleTracker & 0x0200) >> 
+      +                          0x08)) |
+  1737                           ;Main.c: 314: ((slcTroubleTracker & 0x0004 ^ 0x0004) & ((slcTroubleTracker & 0x0400) >> 
+      +                          0x08)) |
+  1738                           ;Main.c: 315: ((slcTroubleTracker & 0x0008 ^ 0x0008) & ((slcTroubleTracker & 0x0800) >> 
+      +                          0x08)) |
+  1739                           ;Main.c: 316: ((slcTroubleTracker & 0x0010 ^ 0x0010) & ((slcTroubleTracker & 0x1000) >> 
+      +                          0x08)) |
+  1740                           ;Main.c: 317: ((slcTroubleTracker & 0x0020 ^ 0x0020) & ((slcTroubleTracker & 0x2000) >> 
+      +                          0x08)) |
+  1741  0242  3080               	movlw	128
+  1742  0243  057A               	andwf	_slcTroubleTracker,w
+  1743  0244  00A0               	movwf	??_softwareISR
+  1744  0245  3080               	movlw	128
+  1745  0246  0620               	xorwf	??_softwareISR,w
+  1746  0247  00A1               	movwf	??_softwareISR+1
+  1747  0248  087B               	movf	_slcTroubleTracker+1,w
+  1748  0249  3980               	andlw	128
+  1749  024A  0521               	andwf	??_softwareISR+1,w
+  1750  024B  00A2               	movwf	??_softwareISR+2
+  1751  024C  3040               	movlw	64
+  1752  024D  057A               	andwf	_slcTroubleTracker,w
+  1753  024E  00A3               	movwf	??_softwareISR+3
+  1754  024F  3040               	movlw	64
+  1755  0250  0623               	xorwf	??_softwareISR+3,w
+  1756  0251  00A4               	movwf	??_softwareISR+4
+  1757  0252  087B               	movf	_slcTroubleTracker+1,w
+  1758  0253  3940               	andlw	64
+  1759  0254  0524               	andwf	??_softwareISR+4,w
+  1760  0255  00A5               	movwf	??_softwareISR+5
+  1761  0256  3020               	movlw	32
+  1762  0257  057A               	andwf	_slcTroubleTracker,w
+  1763  0258  00A6               	movwf	??_softwareISR+6
+  1764  0259  3020               	movlw	32
+  1765  025A  0626               	xorwf	??_softwareISR+6,w
+  1766  025B  00A7               	movwf	??_softwareISR+7
+  1767  025C  087B               	movf	_slcTroubleTracker+1,w
+  1768  025D  3920               	andlw	32
+  1769  025E  0527               	andwf	??_softwareISR+7,w
+  1770  025F  00A8               	movwf	??_softwareISR+8
+  1771  0260  3010               	movlw	16
+  1772  0261  057A               	andwf	_slcTroubleTracker,w
+  1773  0262  00A9               	movwf	??_softwareISR+9
+  1774  0263  3010               	movlw	16
+  1775  0264  0629               	xorwf	??_softwareISR+9,w
+  1776  0265  00AA               	movwf	??_softwareISR+10
+  1777  0266  087B               	movf	_slcTroubleTracker+1,w
+  1778  0267  3910               	andlw	16
+  1779  0268  052A               	andwf	??_softwareISR+10,w
+  1780  0269  00AB               	movwf	??_softwareISR+11
+  1781  026A  3008               	movlw	8
+  1782  026B  057A               	andwf	_slcTroubleTracker,w
+  1783  026C  00AC               	movwf	??_softwareISR+12
+  1784  026D  3008               	movlw	8
+  1785  026E  062C               	xorwf	??_softwareISR+12,w
+  1786  026F  00AD               	movwf	??_softwareISR+13
+  1787  0270  087B               	movf	_slcTroubleTracker+1,w
+  1788  0271  3908               	andlw	8
+  1789  0272  052D               	andwf	??_softwareISR+13,w
+  1790  0273  00AE               	movwf	??_softwareISR+14
+  1791  0274  3004               	movlw	4
+  1792  0275  057A               	andwf	_slcTroubleTracker,w
+  1793  0276  00AF               	movwf	??_softwareISR+15
+  1794  0277  3004               	movlw	4
+  1795  0278  062F               	xorwf	??_softwareISR+15,w
+  1796  0279  00B0               	movwf	??_softwareISR+16
+  1797  027A  087B               	movf	_slcTroubleTracker+1,w
+  1798  027B  3904               	andlw	4
+  1799  027C  0530               	andwf	??_softwareISR+16,w
+  1800  027D  00B1               	movwf	??_softwareISR+17
+  1801  027E  3002               	movlw	2
+  1802  027F  057A               	andwf	_slcTroubleTracker,w
+  1803  0280  00B2               	movwf	??_softwareISR+18
+  1804  0281  3002               	movlw	2
+  1805  0282  0632               	xorwf	??_softwareISR+18,w
+  1806  0283  00B3               	movwf	??_softwareISR+19
+  1807  0284  087B               	movf	_slcTroubleTracker+1,w
+  1808  0285  3902               	andlw	2
+  1809  0286  0533               	andwf	??_softwareISR+19,w
+  1810  0287  00B4               	movwf	??_softwareISR+20
+  1811  0288  087B               	movf	_slcTroubleTracker+1,w
+  1812  0289  00B6               	movwf	??_softwareISR+22
+  1813  028A  087A               	movf	_slcTroubleTracker,w
+  1814  028B  00B5               	movwf	??_softwareISR+21
+  1815  028C  0836               	movf	??_softwareISR+22,w
+  1816  028D  00B5               	movwf	??_softwareISR+21
+  1817  028E  01B6               	clrf	??_softwareISR+22
+  1818  028F  3001               	movlw	1
+  1819  0290  0535               	andwf	??_softwareISR+21,w
+  1820  0291  00B7               	movwf	??_softwareISR+23
+  1821  0292  087A               	movf	_slcTroubleTracker,w
+  1822  0293  3901               	andlw	1
+  1823  0294  3A01               	xorlw	1
+  1824  0295  0537               	andwf	??_softwareISR+23,w
+  1825  0296  0434               	iorwf	??_softwareISR+20,w
+  1826  0297  0431               	iorwf	??_softwareISR+17,w
+  1827  0298  042E               	iorwf	??_softwareISR+14,w
+  1828  0299  042B               	iorwf	??_softwareISR+11,w
+  1829  029A  0428               	iorwf	??_softwareISR+8,w
+  1830  029B  0425               	iorwf	??_softwareISR+5,w
+  1831  029C  0422               	iorwf	??_softwareISR+2,w
+  1832  029D  00B8               	movwf	??_softwareISR+24
+  1833  029E  0838               	movf	??_softwareISR+24,w
+  1834  029F  04E6               	iorwf	_slcTroubleInterrupt,f
+  1835                           
+  1836                           ;Main.c: 320: slcTroubleTracker = (slcTroubleTracker & 0x00FF) << 0x08;
+  1837  02A0  30FF               	movlw	255
+  1838  02A1  057A               	andwf	_slcTroubleTracker,w
+  1839  02A2  00A0               	movwf	??_softwareISR
+  1840  02A3  3000               	movlw	0
+  1841  02A4  057B               	andwf	_slcTroubleTracker+1,w
+  1842  02A5  00A1               	movwf	??_softwareISR+1
+  1843  02A6  0820               	movf	??_softwareISR,w
+  1844  02A7  00A1               	movwf	??_softwareISR+1
+  1845  02A8  01A0               	clrf	??_softwareISR
+  1846  02A9  0820               	movf	??_softwareISR,w
+  1847  02AA  00FA               	movwf	_slcTroubleTracker
+  1848  02AB  0821               	movf	??_softwareISR+1,w
+  1849  02AC  00FB               	movwf	_slcTroubleTracker+1
+  1850                           
+  1851                           ;Main.c: 324: nacTroubleTracker ^= 0x0F;
+  1852  02AD  300F               	movlw	15
+  1853  02AE  00A0               	movwf	??_softwareISR
+  1854  02AF  0820               	movf	??_softwareISR,w
+  1855  02B0  06FC               	xorwf	_nacTroubleTracker,f
+  1856                           
+  1857                           ;Main.c: 325: nacTroubleInterrupt |= ((nacTroubleTracker & 0x01 ^ 0x01) & ((nacTroubleTr
+      +                          acker & 0x10) >> 0x04)) |
+  1858                           ;Main.c: 326: ((nacTroubleTracker & 0x02 ^ 0x02) & ((nacTroubleTracker & 0x20) >> 0x04))
+      +                           |
+  1859                           ;Main.c: 327: ((nacTroubleTracker & 0x04 ^ 0x04) & ((nacTroubleTracker & 0x40) >> 0x04))
+      +                           |
+  1860                           ;Main.c: 328: ((nacTroubleTracker & 0x08 ^ 0x08) & ((nacTroubleTracker & 0x80) >> 0x04))
+      +                          ;
+  1861  02B1  3008               	movlw	8
+  1862  02B2  057C               	andwf	_nacTroubleTracker,w
+  1863  02B3  00A0               	movwf	??_softwareISR
+  1864  02B4  3008               	movlw	8
+  1865  02B5  0620               	xorwf	??_softwareISR,w
+  1866  02B6  00A1               	movwf	??_softwareISR+1
+  1867  02B7  087C               	movf	_nacTroubleTracker,w
+  1868  02B8  00A2               	movwf	??_softwareISR+2
+  1869  02B9  3004               	movlw	4
+  1870  02BA                     u1305:	
+  1871  02BA  1003               	clrc
+  1872  02BB  0CA2               	rrf	??_softwareISR+2,f
+  1873  02BC  3EFF               	addlw	-1
+  1874  02BD  1D03               	skipz
+  1875  02BE  2ABA               	goto	u1305
+  1876  02BF  0822               	movf	??_softwareISR+2,w
+  1877  02C0  3908               	andlw	8
+  1878  02C1  0521               	andwf	??_softwareISR+1,w
+  1879  02C2  00A3               	movwf	??_softwareISR+3
+  1880  02C3  3004               	movlw	4
+  1881  02C4  057C               	andwf	_nacTroubleTracker,w
+  1882  02C5  00A4               	movwf	??_softwareISR+4
+  1883  02C6  3004               	movlw	4
+  1884  02C7  0624               	xorwf	??_softwareISR+4,w
+  1885  02C8  00A5               	movwf	??_softwareISR+5
+  1886  02C9  087C               	movf	_nacTroubleTracker,w
+  1887  02CA  00A6               	movwf	??_softwareISR+6
+  1888  02CB  3004               	movlw	4
+  1889  02CC                     u1315:	
+  1890  02CC  1003               	clrc
+  1891  02CD  0CA6               	rrf	??_softwareISR+6,f
+  1892  02CE  3EFF               	addlw	-1
+  1893  02CF  1D03               	skipz
+  1894  02D0  2ACC               	goto	u1315
+  1895  02D1  0826               	movf	??_softwareISR+6,w
+  1896  02D2  3904               	andlw	4
+  1897  02D3  0525               	andwf	??_softwareISR+5,w
+  1898  02D4  00A7               	movwf	??_softwareISR+7
+  1899  02D5  3002               	movlw	2
+  1900  02D6  057C               	andwf	_nacTroubleTracker,w
+  1901  02D7  00A8               	movwf	??_softwareISR+8
+  1902  02D8  3002               	movlw	2
+  1903  02D9  0628               	xorwf	??_softwareISR+8,w
+  1904  02DA  00A9               	movwf	??_softwareISR+9
+  1905  02DB  087C               	movf	_nacTroubleTracker,w
+  1906  02DC  00AA               	movwf	??_softwareISR+10
+  1907  02DD  3004               	movlw	4
+  1908  02DE                     u1325:	
+  1909  02DE  1003               	clrc
+  1910  02DF  0CAA               	rrf	??_softwareISR+10,f
+  1911  02E0  3EFF               	addlw	-1
+  1912  02E1  1D03               	skipz
+  1913  02E2  2ADE               	goto	u1325
+  1914  02E3  082A               	movf	??_softwareISR+10,w
+  1915  02E4  3902               	andlw	2
+  1916  02E5  0529               	andwf	??_softwareISR+9,w
+  1917  02E6  00AB               	movwf	??_softwareISR+11
+  1918  02E7  087C               	movf	_nacTroubleTracker,w
+  1919  02E8  00AC               	movwf	??_softwareISR+12
+  1920  02E9  3004               	movlw	4
+  1921  02EA                     u1335:	
+  1922  02EA  1003               	clrc
+  1923  02EB  0CAC               	rrf	??_softwareISR+12,f
+  1924  02EC  3EFF               	addlw	-1
+  1925  02ED  1D03               	skipz
+  1926  02EE  2AEA               	goto	u1335
+  1927  02EF  3001               	movlw	1
+  1928  02F0  052C               	andwf	??_softwareISR+12,w
+  1929  02F1  00AD               	movwf	??_softwareISR+13
+  1930  02F2  087C               	movf	_nacTroubleTracker,w
+  1931  02F3  3901               	andlw	1
+  1932  02F4  3A01               	xorlw	1
+  1933  02F5  052D               	andwf	??_softwareISR+13,w
+  1934  02F6  042B               	iorwf	??_softwareISR+11,w
+  1935  02F7  0427               	iorwf	??_softwareISR+7,w
+  1936  02F8  0423               	iorwf	??_softwareISR+3,w
+  1937  02F9  00AE               	movwf	??_softwareISR+14
+  1938  02FA  082E               	movf	??_softwareISR+14,w
+  1939  02FB  04E0               	iorwf	_nacTroubleInterrupt,f
+  1940                           
+  1941                           ;Main.c: 331: nacTroubleTracker ^= 0x0F;
+  1942  02FC  300F               	movlw	15
+  1943  02FD  00A0               	movwf	??_softwareISR
+  1944  02FE  0820               	movf	??_softwareISR,w
+  1945  02FF  06FC               	xorwf	_nacTroubleTracker,f
+  1946                           
+  1947                           ;Main.c: 332: nacTroubleInterrupt |= ((nacTroubleTracker & 0x01 ^ 0x01) & ((nacTroubleTr
+      +                          acker & 0x10) >> 0x04)) |
+  1948                           ;Main.c: 333: ((nacTroubleTracker & 0x02 ^ 0x02) & ((nacTroubleTracker & 0x20) >> 0x04))
+      +                           |
+  1949                           ;Main.c: 334: ((nacTroubleTracker & 0x04 ^ 0x04) & ((nacTroubleTracker & 0x40) >> 0x04))
+      +                           |
+  1950                           ;Main.c: 335: ((nacTroubleTracker & 0x08 ^ 0x08) & ((nacTroubleTracker & 0x80) >> 0x04))
+      +                          ;
+  1951  0300  3008               	movlw	8
+  1952  0301  057C               	andwf	_nacTroubleTracker,w
+  1953  0302  00A0               	movwf	??_softwareISR
+  1954  0303  3008               	movlw	8
+  1955  0304  0620               	xorwf	??_softwareISR,w
+  1956  0305  00A1               	movwf	??_softwareISR+1
+  1957  0306  087C               	movf	_nacTroubleTracker,w
+  1958  0307  00A2               	movwf	??_softwareISR+2
+  1959  0308  3004               	movlw	4
+  1960  0309                     u1345:	
+  1961  0309  1003               	clrc
+  1962  030A  0CA2               	rrf	??_softwareISR+2,f
+  1963  030B  3EFF               	addlw	-1
+  1964  030C  1D03               	skipz
+  1965  030D  2B09               	goto	u1345
+  1966  030E  0822               	movf	??_softwareISR+2,w
+  1967  030F  3908               	andlw	8
+  1968  0310  0521               	andwf	??_softwareISR+1,w
+  1969  0311  00A3               	movwf	??_softwareISR+3
+  1970  0312  3004               	movlw	4
+  1971  0313  057C               	andwf	_nacTroubleTracker,w
+  1972  0314  00A4               	movwf	??_softwareISR+4
+  1973  0315  3004               	movlw	4
+  1974  0316  0624               	xorwf	??_softwareISR+4,w
+  1975  0317  00A5               	movwf	??_softwareISR+5
+  1976  0318  087C               	movf	_nacTroubleTracker,w
+  1977  0319  00A6               	movwf	??_softwareISR+6
+  1978  031A  3004               	movlw	4
+  1979  031B                     u1355:	
+  1980  031B  1003               	clrc
+  1981  031C  0CA6               	rrf	??_softwareISR+6,f
+  1982  031D  3EFF               	addlw	-1
+  1983  031E  1D03               	skipz
+  1984  031F  2B1B               	goto	u1355
+  1985  0320  0826               	movf	??_softwareISR+6,w
+  1986  0321  3904               	andlw	4
+  1987  0322  0525               	andwf	??_softwareISR+5,w
+  1988  0323  00A7               	movwf	??_softwareISR+7
+  1989  0324  3002               	movlw	2
+  1990  0325  057C               	andwf	_nacTroubleTracker,w
+  1991  0326  00A8               	movwf	??_softwareISR+8
+  1992  0327  3002               	movlw	2
+  1993  0328  0628               	xorwf	??_softwareISR+8,w
+  1994  0329  00A9               	movwf	??_softwareISR+9
+  1995  032A  087C               	movf	_nacTroubleTracker,w
+  1996  032B  00AA               	movwf	??_softwareISR+10
+  1997  032C  3004               	movlw	4
+  1998  032D                     u1365:	
+  1999  032D  1003               	clrc
+  2000  032E  0CAA               	rrf	??_softwareISR+10,f
+  2001  032F  3EFF               	addlw	-1
+  2002  0330  1D03               	skipz
+  2003  0331  2B2D               	goto	u1365
+  2004  0332  082A               	movf	??_softwareISR+10,w
+  2005  0333  3902               	andlw	2
+  2006  0334  0529               	andwf	??_softwareISR+9,w
+  2007  0335  00AB               	movwf	??_softwareISR+11
+  2008  0336  087C               	movf	_nacTroubleTracker,w
+  2009  0337  00AC               	movwf	??_softwareISR+12
+  2010  0338  3004               	movlw	4
+  2011  0339                     u1375:	
+  2012  0339  1003               	clrc
+  2013  033A  0CAC               	rrf	??_softwareISR+12,f
+  2014  033B  3EFF               	addlw	-1
+  2015  033C  1D03               	skipz
+  2016  033D  2B39               	goto	u1375
+  2017  033E  3001               	movlw	1
+  2018  033F  052C               	andwf	??_softwareISR+12,w
+  2019  0340  00AD               	movwf	??_softwareISR+13
+  2020  0341  087C               	movf	_nacTroubleTracker,w
+  2021  0342  3901               	andlw	1
+  2022  0343  3A01               	xorlw	1
+  2023  0344  052D               	andwf	??_softwareISR+13,w
+  2024  0345  042B               	iorwf	??_softwareISR+11,w
+  2025  0346  0427               	iorwf	??_softwareISR+7,w
+  2026  0347  0423               	iorwf	??_softwareISR+3,w
+  2027  0348  00AE               	movwf	??_softwareISR+14
+  2028  0349  082E               	movf	??_softwareISR+14,w
+  2029  034A  04E0               	iorwf	_nacTroubleInterrupt,f
+  2030                           
+  2031                           ;Main.c: 336: nacTroubleTracker = (nacTroubleTracker & 0x0F) << 0x04;
+  2032  034B  087C               	movf	_nacTroubleTracker,w
+  2033  034C  390F               	andlw	15
+  2034  034D  00A0               	movwf	??_softwareISR
+  2035  034E  3003               	movlw	3
+  2036  034F                     u1385:	
+  2037  034F  1003               	clrc
+  2038  0350  0DA0               	rlf	??_softwareISR,f
+  2039  0351  3EFF               	addlw	-1
+  2040  0352  1D03               	skipz
+  2041  0353  2B4F               	goto	u1385
+  2042  0354  1003               	clrc
+  2043  0355  0D20               	rlf	??_softwareISR,w
+  2044  0356  00A1               	movwf	??_softwareISR+1
+  2045  0357  0821               	movf	??_softwareISR+1,w
+  2046  0358  00FC               	movwf	_nacTroubleTracker
+  2047  0359                     l1210:	
+  2048                           
+  2049                           ;Main.c: 337: }
+  2050                           ;Main.c: 340: ADCON0 &= 0xC1;
+  2051  0359  30C1               	movlw	193
+  2052  035A  00A0               	movwf	??_softwareISR
+  2053  035B  0820               	movf	??_softwareISR,w
+  2054  035C  059F               	andwf	31,f	;volatile
+  2055                           
+  2056                           ;Main.c: 341: ADCON0 |= (activeADChannel & 0x0F) << 0x02;
+  2057  035D  0857               	movf	_activeADChannel,w
+  2058  035E  390F               	andlw	15
+  2059  035F  00A0               	movwf	??_softwareISR
+  2060  0360  3001               	movlw	1
+  2061  0361                     u1395:	
+  2062  0361  1003               	clrc
+  2063  0362  0DA0               	rlf	??_softwareISR,f
+  2064  0363  3EFF               	addlw	-1
+  2065  0364  1D03               	skipz
+  2066  0365  2B61               	goto	u1395
+  2067  0366  1003               	clrc
+  2068  0367  0D20               	rlf	??_softwareISR,w
+  2069  0368  00A1               	movwf	??_softwareISR+1
+  2070  0369  0821               	movf	??_softwareISR+1,w
+  2071  036A  049F               	iorwf	31,f	;volatile
+  2072                           
+  2073                           ;Main.c: 344: __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __
+      +                          nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); 
+      +                          __nop(); __nop();
+  2074  036B  0000               	nop
+  2075  036C  0000               	nop
+  2076  036D  0000               	nop
+  2077  036E  0000               	nop
+  2078  036F  0000               	nop
+  2079  0370  0000               	nop
+  2080  0371  0000               	nop
+  2081  0372  0000               	nop
+  2082  0373  0000               	nop
+  2083  0374  0000               	nop
+  2084  0375  0000               	nop
+  2085  0376  0000               	nop
+  2086  0377  0000               	nop
+  2087  0378  0000               	nop
+  2088  0379  0000               	nop
+  2089  037A  0000               	nop
+  2090  037B  0000               	nop
+  2091  037C  0000               	nop
+  2092  037D  0000               	nop
+  2093  037E  0000               	nop
+  2094                           
+  2095                           ;Main.c: 345: __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __
+      +                          nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); 
+      +                          __nop(); __nop();
+  2096  037F  0000               	nop
+  2097  0380  0000               	nop
+  2098  0381  0000               	nop
+  2099  0382  0000               	nop
+  2100  0383  0000               	nop
+  2101  0384  0000               	nop
+  2102  0385  0000               	nop
+  2103  0386  0000               	nop
+  2104  0387  0000               	nop
+  2105  0388  0000               	nop
+  2106  0389  0000               	nop
+  2107  038A  0000               	nop
+  2108  038B  0000               	nop
+  2109  038C  0000               	nop
+  2110  038D  0000               	nop
+  2111  038E  0000               	nop
+  2112  038F  0000               	nop
+  2113  0390  0000               	nop
+  2114  0391  0000               	nop
+  2115  0392  0000               	nop
+  2116                           
+  2117                           ;Main.c: 346: __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __
+      +                          nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); 
+      +                          __nop(); __nop();
+  2118  0393  0000               	nop
+  2119  0394  0000               	nop
+  2120  0395  0000               	nop
+  2121  0396  0000               	nop
+  2122  0397  0000               	nop
+  2123  0398  0000               	nop
+  2124  0399  0000               	nop
+  2125  039A  0000               	nop
+  2126  039B  0000               	nop
+  2127  039C  0000               	nop
+  2128  039D  0000               	nop
+  2129  039E  0000               	nop
+  2130  039F  0000               	nop
+  2131  03A0  0000               	nop
+  2132  03A1  0000               	nop
+  2133  03A2  0000               	nop
+  2134  03A3  0000               	nop
+  2135  03A4  0000               	nop
+  2136  03A5  0000               	nop
+  2137  03A6  0000               	nop
+  2138                           
+  2139                           ;Main.c: 347: __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __
+      +                          nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); 
+      +                          __nop(); __nop();
+  2140  03A7  0000               	nop
+  2141  03A8  0000               	nop
+  2142  03A9  0000               	nop
+  2143  03AA  0000               	nop
+  2144  03AB  0000               	nop
+  2145  03AC  0000               	nop
+  2146  03AD  0000               	nop
+  2147  03AE  0000               	nop
+  2148  03AF  0000               	nop
+  2149  03B0  0000               	nop
+  2150  03B1  0000               	nop
+  2151  03B2  0000               	nop
+  2152  03B3  0000               	nop
+  2153  03B4  0000               	nop
+  2154  03B5  0000               	nop
+  2155  03B6  0000               	nop
+  2156  03B7  0000               	nop
+  2157  03B8  0000               	nop
+  2158  03B9  0000               	nop
+  2159  03BA  0000               	nop
+  2160                           
+  2161                           ;Main.c: 348: __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __
+      +                          nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); __nop(); 
+      +                          __nop(); __nop();
+  2162  03BB  0000               	nop
+  2163  03BC  0000               	nop
+  2164  03BD  0000               	nop
+  2165  03BE  0000               	nop
+  2166  03BF  0000               	nop
+  2167  03C0  0000               	nop
+  2168  03C1  0000               	nop
+  2169  03C2  0000               	nop
+  2170  03C3  0000               	nop
+  2171  03C4  0000               	nop
+  2172  03C5  0000               	nop
+  2173  03C6  0000               	nop
+  2174  03C7  0000               	nop
+  2175  03C8  0000               	nop
+  2176  03C9  0000               	nop
+  2177  03CA  0000               	nop
+  2178  03CB  0000               	nop
+  2179  03CC  0000               	nop
+  2180  03CD  0000               	nop
+  2181  03CE  0000               	nop
+  2182                           
+  2183                           ;Main.c: 349: ADCON0 |= 0x02;
+  2184  03CF  1283               	bcf	3,5	;RP0=0, select bank0
+  2185  03D0  1303               	bcf	3,6	;RP1=0, select bank0
+  2186  03D1  149F               	bsf	31,1	;volatile
+  2187  03D2                     l1416:	
+  2188                           
+  2189                           ;Main.c: 350: }
+  2190                           ;Main.c: 355: if ((buttonInterrupt & 0x01) == 0x01) {
+  2191  03D2  1C58               	btfss	_buttonInterrupt,0
+  2192  03D3  2BDC               	goto	l1422
+  2193                           
+  2194                           ;Main.c: 356: buttonInterrupt &= 0xFE;
+  2195  03D4  30FE               	movlw	254
+  2196  03D5  00A0               	movwf	??_softwareISR
+  2197  03D6  0820               	movf	??_softwareISR,w
+  2198  03D7  05D8               	andwf	_buttonInterrupt,f
+  2199                           
+  2200                           ;Main.c: 358: resetCounter = 0x7F;
+  2201  03D8  307F               	movlw	127
+  2202  03D9  00A0               	movwf	??_softwareISR
+  2203  03DA  0820               	movf	??_softwareISR,w
+  2204  03DB  00E3               	movwf	_resetCounter
+  2205  03DC                     l1422:	
+  2206                           
+  2207                           ;Main.c: 359: }
+  2208                           ;Main.c: 362: if ((buttonInterrupt & 0x02) == 0x02) {
+  2209  03DC  1CD8               	btfss	_buttonInterrupt,1
+  2210  03DD  2BFC               	goto	l1442
+  2211                           
+  2212                           ;Main.c: 363: buttonInterrupt &= 0xFD;
+  2213  03DE  30FD               	movlw	253
+  2214  03DF  00A0               	movwf	??_softwareISR
+  2215  03E0  0820               	movf	??_softwareISR,w
+  2216  03E1  05D8               	andwf	_buttonInterrupt,f
+  2217                           
+  2218                           ;Main.c: 366: if ((currentConditions & 0x01) == 0x01) {
+  2219  03E2  1C59               	btfss	_currentConditions,0
+  2220  03E3  2BE6               	goto	l147
+  2221                           
+  2222                           ;Main.c: 367: currentConditions &= 0xFE;
+  2223  03E4  30FE               	movlw	254
+  2224  03E5  2BE9               	goto	L1
+  2225  03E6                     l147:	
+  2226                           ;Main.c: 370: } else if ((currentConditions & 0x02) == 0x02) {
+  2227                           
+  2228                           ;Main.c: 369: ledControl |= 0x10;
+  2229                           
+  2230  03E6  1CD9               	btfss	_currentConditions,1
+  2231  03E7  2BEE               	goto	l149
+  2232                           
+  2233                           ;Main.c: 371: currentConditions &= 0xFD;
+  2234  03E8  30FD               	movlw	253
+  2235  03E9                     L1:	
+  2236  03E9  00A0               	movwf	??_softwareISR
+  2237  03EA  0820               	movf	??_softwareISR,w
+  2238  03EB  05D9               	andwf	_currentConditions,f
+  2239                           
+  2240                           ;Main.c: 373: ledControl |= 0x10;
+  2241  03EC  165E               	bsf	_ledControl,4
+  2242                           
+  2243                           ;Main.c: 374: } else if ((currentConditions & 0x04) == 0x04) {
+  2244  03ED  2BF5               	goto	l148
+  2245  03EE                     l149:	
+  2246  03EE  1D59               	btfss	_currentConditions,2
+  2247  03EF  2BF5               	goto	l148
+  2248                           
+  2249                           ;Main.c: 375: currentConditions &= 0xFB;
+  2250  03F0  30FB               	movlw	251
+  2251  03F1  00A0               	movwf	??_softwareISR
+  2252  03F2  0820               	movf	??_softwareISR,w
+  2253  03F3  05D9               	andwf	_currentConditions,f
+  2254                           
+  2255                           ;Main.c: 377: ledControl |= 0x20;
+  2256  03F4  16DE               	bsf	_ledControl,5
+  2257  03F5                     l148:	
+  2258                           
+  2259                           ;Main.c: 378: }
+  2260                           ;Main.c: 381: if (currentConditions == 0x00) {
+  2261  03F5  0859               	movf	_currentConditions,w
+  2262  03F6  1D03               	btfss	3,2
+  2263  03F7  2BFC               	goto	l1442
+  2264                           
+  2265                           ;Main.c: 382: ledControl &= 0xFE;
+  2266  03F8  30FE               	movlw	254
+  2267  03F9  00A0               	movwf	??_softwareISR
+  2268  03FA  0820               	movf	??_softwareISR,w
+  2269  03FB  05DE               	andwf	_ledControl,f
+  2270  03FC                     l1442:	
+  2271                           
+  2272                           ;Main.c: 383: }
+  2273                           ;Main.c: 384: }
+  2274                           ;Main.c: 387: if ((buttonInterrupt & 0x04) == 0x04) {
+  2275  03FC  1D58               	btfss	_buttonInterrupt,2
+  2276  03FD  2C44               	goto	l1460
+  2277                           
+  2278                           ;Main.c: 388: buttonInterrupt &= 0xFB;
+  2279  03FE  30FB               	movlw	251
+  2280  03FF  00A0               	movwf	??_softwareISR
+  2281  0400  0820               	movf	??_softwareISR,w
+  2282  0401  05D8               	andwf	_buttonInterrupt,f
+  2283                           
+  2284                           ;Main.c: 391: if (preAlarmCause != 0x00 && generalAlarmCause == 0x00 && (nacTypeControl 
+      +                          & 0x0F) != 0x00) {
+  2285  0402  0861               	movf	_preAlarmCause,w
+  2286  0403  1903               	btfsc	3,2
+  2287  0404  2C22               	goto	l1452
+  2288  0405  085A               	movf	_generalAlarmCause,w
+  2289  0406  1D03               	btfss	3,2
+  2290  0407  2C22               	goto	l1452
+  2291  0408  086B               	movf	_nacTypeControl,w
+  2292  0409  390F               	andlw	15
+  2293  040A  1903               	btfsc	3,2
+  2294  040B  2C22               	goto	l1452
+  2295                           
+  2296                           ;Main.c: 392: nacControl ^= (((nacControl & 0xF0 ^ 0xF0) & (nacTypeControl & 0xF0)) >> 0
+      +                          x04) & (nacTypeControl & 0x0F);
+  2297  040C  300F               	movlw	15
+  2298  040D  056B               	andwf	_nacTypeControl,w
+  2299  040E  00A0               	movwf	??_softwareISR
+  2300  040F  30F0               	movlw	240
+  2301  0410  056B               	andwf	_nacTypeControl,w
+  2302  0411  00A1               	movwf	??_softwareISR+1
+  2303  0412  086A               	movf	_nacControl,w
+  2304  0413  39F0               	andlw	240
+  2305  0414  3AF0               	xorlw	240
+  2306  0415  0521               	andwf	??_softwareISR+1,w
+  2307  0416  00A2               	movwf	??_softwareISR+2
+  2308  0417  3004               	movlw	4
+  2309  0418                     u1505:	
+  2310  0418  1003               	clrc
+  2311  0419  0CA2               	rrf	??_softwareISR+2,f
+  2312  041A  3EFF               	addlw	-1
+  2313  041B  1D03               	skipz
+  2314  041C  2C18               	goto	u1505
+  2315  041D  0822               	movf	??_softwareISR+2,w
+  2316  041E  0520               	andwf	??_softwareISR,w
+  2317  041F  00A3               	movwf	??_softwareISR+3
+  2318  0420  0823               	movf	??_softwareISR+3,w
+  2319  0421  2C3F               	goto	L2
+  2320  0422                     l1452:	
+  2321                           ;Main.c: 394: } else if (generalAlarmCause != 0x00 && (nacTypeControl & 0x0F) != 0x00){
+  2322                           
+  2323                           ;Main.c: 393: ledControl ^= 0x08;
+  2324                           
+  2325  0422  085A               	movf	_generalAlarmCause,w
+  2326  0423  1903               	btfsc	3,2
+  2327  0424  2C44               	goto	l1460
+  2328  0425  086B               	movf	_nacTypeControl,w
+  2329  0426  390F               	andlw	15
+  2330  0427  1903               	btfsc	3,2
+  2331  0428  2C44               	goto	l1460
+  2332                           
+  2333                           ;Main.c: 395: nacControl ^= ((nacControl & 0xF0 ^ 0xF0) >> 0x04) & (nacTypeControl & 0x0
+      +                          F);
+  2334  0429  300F               	movlw	15
+  2335  042A  056B               	andwf	_nacTypeControl,w
+  2336  042B  00A0               	movwf	??_softwareISR
+  2337  042C  30F0               	movlw	240
+  2338  042D  056A               	andwf	_nacControl,w
+  2339  042E  00A1               	movwf	??_softwareISR+1
+  2340  042F  30F0               	movlw	240
+  2341  0430  0621               	xorwf	??_softwareISR+1,w
+  2342  0431  00A2               	movwf	??_softwareISR+2
+  2343  0432  3000               	movlw	0
+  2344  0433  00A3               	movwf	??_softwareISR+3
+  2345  0434  3004               	movlw	4
+  2346  0435  00FF               	movwf	127
+  2347  0436                     u1535:	
+  2348  0436  0D23               	rlf	??_softwareISR+3,w
+  2349  0437  0CA3               	rrf	??_softwareISR+3,f
+  2350  0438  0CA2               	rrf	??_softwareISR+2,f
+  2351  0439  0BFF               	decfsz	127,f
+  2352  043A  2C36               	goto	u1535
+  2353  043B  0822               	movf	??_softwareISR+2,w
+  2354  043C  0520               	andwf	??_softwareISR,w
+  2355  043D  00A4               	movwf	??_softwareISR+4
+  2356  043E  0824               	movf	??_softwareISR+4,w
+  2357  043F                     L2:	
+  2358  043F  06EA               	xorwf	_nacControl,f
+  2359                           
+  2360                           ;Main.c: 396: ledControl ^= 0x08;
+  2361  0440  3008               	movlw	8
+  2362  0441  00A0               	movwf	??_softwareISR
+  2363  0442  0820               	movf	??_softwareISR,w
+  2364  0443  06DE               	xorwf	_ledControl,f
+  2365  0444                     l1460:	
+  2366                           
+  2367                           ;Main.c: 397: }
+  2368                           ;Main.c: 398: }
+  2369                           ;Main.c: 401: if ((buttonInterrupt & 0x08) == 0x08) {
+  2370  0444  1DD8               	btfss	_buttonInterrupt,3
+  2371  0445  0008               	return
+  2372                           
+  2373                           ;Main.c: 402: buttonInterrupt &= 0xF7;
+  2374  0446  30F7               	movlw	247
+  2375  0447  00A0               	movwf	??_softwareISR
+  2376  0448  0820               	movf	??_softwareISR,w
+  2377  0449  05D8               	andwf	_buttonInterrupt,f
+  2378  044A  0008               	return
+  2379  044B                     __end_of_softwareISR:	
+  2380                           
+  2381                           	psect	text2
+  2382  0674                     __ptext2:	
+  2383 ;; *************** function _hardwareInterruptISR *****************
+  2384 ;; Defined at:
+  2385 ;;		line 81 in file "Main.c"
+  2386 ;; Parameters:    Size  Location     Type
+  2387 ;;		None
+  2388 ;; Auto vars:     Size  Location     Type
+  2389 ;;		None
+  2390 ;; Return value:  Size  Location     Type
+  2391 ;;                  1    wreg      void 
+  2392 ;; Registers used:
+  2393 ;;		wreg, status,2, status,0
+  2394 ;; Tracked objects:
+  2395 ;;		On entry : 0/0
+  2396 ;;		On exit  : 0/0
+  2397 ;;		Unchanged: 0/0
+  2398 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2399 ;;      Params:         0       0       0       0
+  2400 ;;      Locals:         0       0       0       0
+  2401 ;;      Temps:          8       0       0       0
+  2402 ;;      Totals:         8       0       0       0
+  2403 ;;Total ram usage:        8 bytes
+  2404 ;; Hardware stack levels used:    1
+  2405 ;; This function calls:
+  2406 ;;		Nothing
+  2407 ;; This function is called by:
+  2408 ;;		Interrupt level 1
+  2409 ;; This function uses a non-reentrant model
+  2410 ;;
+  2411                           
+  2412                           
+  2413                           ;psect for function _hardwareInterruptISR
+  2414  0674                     _hardwareInterruptISR:	
+  2415                           
+  2416                           ;Main.c: 83: if ((INTCON & 0x04) == 0x04) {
+  2417  0674  1D0B               	btfss	11,2	;volatile
+  2418  0675  2ECC               	goto	i1l1488
+  2419                           
+  2420                           ;Main.c: 84: INTCON &= 0xFB;
+  2421  0676  30FB               	movlw	251
+  2422  0677  00F0               	movwf	??_hardwareInterruptISR
+  2423  0678  0870               	movf	??_hardwareInterruptISR,w
+  2424  0679  058B               	andwf	11,f	;volatile
+  2425                           
+  2426                           ;Main.c: 86: utilityCounter++;
+  2427  067A  3001               	movlw	1
+  2428  067B  00F0               	movwf	??_hardwareInterruptISR
+  2429  067C  0870               	movf	??_hardwareInterruptISR,w
+  2430  067D  07E7               	addwf	_utilityCounter,f
+  2431                           
+  2432                           ;Main.c: 89: if ((utilityCounter & 0x01) == 0x01) {
+  2433  067E  1C67               	btfss	_utilityCounter,0
+  2434  067F  2E90               	goto	i1l1476
+  2435                           
+  2436                           ;Main.c: 90: ledControl ^= 0x80;
+  2437  0680  3080               	movlw	128
+  2438  0681  00F0               	movwf	??_hardwareInterruptISR
+  2439  0682  0870               	movf	??_hardwareInterruptISR,w
+  2440  0683  06DE               	xorwf	_ledControl,f
+  2441                           
+  2442                           ;Main.c: 93: if (resetCounter != 0x00) {
+  2443  0684  0863               	movf	_resetCounter,w
+  2444  0685  1903               	btfsc	3,2
+  2445  0686  2E90               	goto	i1l1476
+  2446                           
+  2447                           ;Main.c: 94: resetCounter--;
+  2448  0687  3001               	movlw	1
+  2449  0688  02E3               	subwf	_resetCounter,f
+  2450                           
+  2451                           ;Main.c: 97: if (resetCounter == 0x00) {
+  2452  0689  0863               	movf	_resetCounter,w
+  2453  068A  1D03               	btfss	3,2
+  2454  068B  2E90               	goto	i1l1476
+  2455                           
+  2456                           ;Main.c: 98: WDTCON = 0x01;
+  2457  068C  3001               	movlw	1
+  2458  068D  1283               	bcf	3,5	;RP0=0, select bank2
+  2459  068E  1703               	bsf	3,6	;RP1=1, select bank2
+  2460  068F  0085               	movwf	5	;volatile
+  2461  0690                     i1l1476:	
+  2462                           
+  2463                           ;Main.c: 99: }
+  2464                           ;Main.c: 100: }
+  2465                           ;Main.c: 101: }
+  2466                           ;Main.c: 104: if ((utilityCounter & 0x03) == 0x01) {
+  2467  0690  3003               	movlw	3
+  2468  0691  1303               	bcf	3,6	;RP1=0, select bank0
+  2469  0692  0567               	andwf	_utilityCounter,w
+  2470  0693  00F0               	movwf	??_hardwareInterruptISR
+  2471  0694  0370               	decf	??_hardwareInterruptISR,w
+  2472  0695  1D03               	btfss	3,2
+  2473  0696  2E9B               	goto	i1l115
+  2474                           
+  2475                           ;Main.c: 105: coderCounter ^= 0x02;
+  2476  0697  3002               	movlw	2
+  2477  0698  00F0               	movwf	??_hardwareInterruptISR
+  2478  0699  0870               	movf	??_hardwareInterruptISR,w
+  2479  069A  06E9               	xorwf	_coderCounter,f
+  2480  069B                     i1l115:	
+  2481                           
+  2482                           ;Main.c: 106: }
+  2483                           ;Main.c: 109: if ((utilityCounter & 0x07) == 0x01) {
+  2484  069B  3007               	movlw	7
+  2485  069C  0567               	andwf	_utilityCounter,w
+  2486  069D  00F0               	movwf	??_hardwareInterruptISR
+  2487  069E  0370               	decf	??_hardwareInterruptISR,w
+  2488  069F  1D03               	btfss	3,2
+  2489  06A0  2ECC               	goto	i1l1488
+  2490                           
+  2491                           ;Main.c: 110: ledControl ^= 0x40;
+  2492  06A1  3040               	movlw	64
+  2493  06A2  00F0               	movwf	??_hardwareInterruptISR
+  2494  06A3  0870               	movf	??_hardwareInterruptISR,w
+  2495  06A4  06DE               	xorwf	_ledControl,f
+  2496                           
+  2497                           ;Main.c: 111: coderCounter ^= 0x04;
+  2498  06A5  3004               	movlw	4
+  2499  06A6  00F0               	movwf	??_hardwareInterruptISR
+  2500  06A7  0870               	movf	??_hardwareInterruptISR,w
+  2501  06A8  06E9               	xorwf	_coderCounter,f
+  2502                           
+  2503                           ;Main.c: 112: coderCounter += 0x10;
+  2504  06A9  3010               	movlw	16
+  2505  06AA  00F0               	movwf	??_hardwareInterruptISR
+  2506  06AB  0870               	movf	??_hardwareInterruptISR,w
+  2507  06AC  07E9               	addwf	_coderCounter,f
+  2508                           
+  2509                           ;Main.c: 115: if ((coderCounter & 0xF0) < 0x70) {
+  2510  06AD  30F0               	movlw	240
+  2511  06AE  0569               	andwf	_coderCounter,w
+  2512  06AF  00F0               	movwf	??_hardwareInterruptISR
+  2513  06B0  3070               	movlw	112
+  2514  06B1  0270               	subwf	??_hardwareInterruptISR,w
+  2515  06B2  1803               	skipnc
+  2516  06B3  2EC0               	goto	i1l117
+  2517                           
+  2518                           ;Main.c: 116: coderCounter &= 0xF7;
+  2519  06B4  30F7               	movlw	247
+  2520  06B5  00F0               	movwf	??_hardwareInterruptISR
+  2521  06B6  0870               	movf	??_hardwareInterruptISR,w
+  2522  06B7  05E9               	andwf	_coderCounter,f
+  2523                           
+  2524                           ;Main.c: 117: coderCounter |= (coderCounter & 0x10) >> 0x01;
+  2525  06B8  0869               	movf	_coderCounter,w
+  2526  06B9  00F0               	movwf	??_hardwareInterruptISR
+  2527  06BA  1003               	clrc
+  2528  06BB  0C70               	rrf	??_hardwareInterruptISR,w
+  2529  06BC  3908               	andlw	8
+  2530  06BD  00F1               	movwf	??_hardwareInterruptISR+1
+  2531  06BE  0871               	movf	??_hardwareInterruptISR+1,w
+  2532  06BF  04E9               	iorwf	_coderCounter,f
+  2533  06C0                     i1l117:	
+  2534                           
+  2535                           ;Main.c: 118: }
+  2536                           ;Main.c: 121: if ((coderCounter & 0xF0) == 0x80) {
+  2537  06C0  30F0               	movlw	240
+  2538  06C1  0569               	andwf	_coderCounter,w
+  2539  06C2  00F0               	movwf	??_hardwareInterruptISR
+  2540  06C3  3080               	movlw	128
+  2541  06C4  0670               	xorwf	??_hardwareInterruptISR,w
+  2542  06C5  1D03               	btfss	3,2
+  2543  06C6  2ECB               	goto	i1l1486
+  2544                           
+  2545                           ;Main.c: 122: coderCounter &= 0x0F;
+  2546  06C7  300F               	movlw	15
+  2547  06C8  00F0               	movwf	??_hardwareInterruptISR
+  2548  06C9  0870               	movf	??_hardwareInterruptISR,w
+  2549  06CA  05E9               	andwf	_coderCounter,f
+  2550  06CB                     i1l1486:	
+  2551                           
+  2552                           ;Main.c: 123: }
+  2553                           ;Main.c: 125: ADCON0 |= 0x02;
+  2554  06CB  149F               	bsf	31,1	;volatile
+  2555  06CC                     i1l1488:	
+  2556                           
+  2557                           ;Main.c: 126: }
+  2558                           ;Main.c: 127: }
+  2559                           ;Main.c: 130: if ((PIR1 & 0x40) == 0x40) {
+  2560  06CC  1F0C               	btfss	12,6	;volatile
+  2561  06CD  2F75               	goto	i1l128
+  2562                           
+  2563                           ;Main.c: 131: PIR1 &= 0xBF;
+  2564  06CE  30BF               	movlw	191
+  2565  06CF  00F0               	movwf	??_hardwareInterruptISR
+  2566  06D0  0870               	movf	??_hardwareInterruptISR,w
+  2567  06D1  058C               	andwf	12,f	;volatile
+  2568                           
+  2569                           ;Main.c: 134: activeADChannel &= 0x0F;
+  2570  06D2  300F               	movlw	15
+  2571  06D3  00F0               	movwf	??_hardwareInterruptISR
+  2572  06D4  0870               	movf	??_hardwareInterruptISR,w
+  2573  06D5  05D7               	andwf	_activeADChannel,f
+  2574                           
+  2575                           ;Main.c: 137: if (ADRESL >= 0x55 && (ADRESH & 0x03) >= 0x03) {
+  2576  06D6  3055               	movlw	85
+  2577  06D7  1683               	bsf	3,5	;RP0=1, select bank1
+  2578  06D8  1303               	bcf	3,6	;RP1=0, select bank1
+  2579  06D9  021E               	subwf	30,w	;volatile
+  2580  06DA  1C03               	skipc
+  2581  06DB  2EE5               	goto	i1l1498
+  2582  06DC  3003               	movlw	3
+  2583  06DD  1283               	bcf	3,5	;RP0=0, select bank0
+  2584  06DE  1303               	bcf	3,6	;RP1=0, select bank0
+  2585  06DF  051E               	andwf	30,w	;volatile
+  2586  06E0  00F0               	movwf	??_hardwareInterruptISR
+  2587  06E1  3003               	movlw	3
+  2588  06E2  0270               	subwf	??_hardwareInterruptISR,w
+  2589  06E3  1803               	btfsc	3,0
+  2590                           
+  2591                           ;Main.c: 138: activeADChannel |= 0x10;
+  2592  06E4  1657               	bsf	_activeADChannel,4
+  2593  06E5                     i1l1498:	
+  2594                           
+  2595                           ;Main.c: 139: }
+  2596                           ;Main.c: 142: if (!(ADRESL >= 0xEF && (ADRESH & 0x03) == 0x01) && (ADRESL <= 0x03 && (AD
+      +                          RESH & 0x03) == 0x02)) {
+  2597  06E5  30EF               	movlw	239
+  2598  06E6  1683               	bsf	3,5	;RP0=1, select bank1
+  2599  06E7  1303               	bcf	3,6	;RP1=0, select bank1
+  2600  06E8  021E               	subwf	30,w	;volatile
+  2601  06E9  1C03               	skipc
+  2602  06EA  2EF3               	goto	i1l1502
+  2603  06EB  3003               	movlw	3
+  2604  06EC  1283               	bcf	3,5	;RP0=0, select bank0
+  2605  06ED  1303               	bcf	3,6	;RP1=0, select bank0
+  2606  06EE  051E               	andwf	30,w	;volatile
+  2607  06EF  00F0               	movwf	??_hardwareInterruptISR
+  2608  06F0  0370               	decf	??_hardwareInterruptISR,w
+  2609  06F1  1903               	btfsc	3,2
+  2610  06F2  2EFC               	goto	i1l1506
+  2611  06F3                     i1l1502:	
+  2612  06F3  3004               	movlw	4
+  2613  06F4  1683               	bsf	3,5	;RP0=1, select bank1
+  2614  06F5  1303               	bcf	3,6	;RP1=0, select bank1
+  2615  06F6  021E               	subwf	30,w	;volatile
+  2616  06F7  1803               	skipnc
+  2617  06F8  2EFC               	goto	i1l1506
+  2618  06F9  1283               	bcf	3,5	;RP0=0, select bank0
+  2619  06FA  1303               	bcf	3,6	;RP1=0, select bank0
+  2620  06FB  081E               	movf	30,w	;volatile
+  2621  06FC                     i1l1506:	
+  2622                           
+  2623                           ;Main.c: 145: }
+  2624                           ;Main.c: 148: if (ADRESL <= 0x0F && (ADRESH & 0x03) == 0x00) {
+  2625  06FC  3010               	movlw	16
+  2626  06FD  1683               	bsf	3,5	;RP0=1, select bank1
+  2627  06FE  1303               	bcf	3,6	;RP1=0, select bank1
+  2628  06FF  021E               	subwf	30,w	;volatile
+  2629  0700  1803               	skipnc
+  2630  0701  2F05               	goto	i1l1510
+  2631  0702  1283               	bcf	3,5	;RP0=0, select bank0
+  2632  0703  1303               	bcf	3,6	;RP1=0, select bank0
+  2633  0704  081E               	movf	30,w	;volatile
+  2634  0705                     i1l1510:	
+  2635                           
+  2636                           ;Main.c: 150: }
+  2637                           ;Main.c: 153: if ((activeADChannel & 0x0F) < 0x04) {
+  2638  0705  300F               	movlw	15
+  2639  0706  1283               	bcf	3,5	;RP0=0, select bank0
+  2640  0707  0557               	andwf	_activeADChannel,w
+  2641  0708  00F0               	movwf	??_hardwareInterruptISR
+  2642  0709  3004               	movlw	4
+  2643  070A  0270               	subwf	??_hardwareInterruptISR,w
+  2644  070B  1C03               	btfss	3,0
+  2645  070C  2F74               	goto	i1l1518
+  2646                           
+  2647                           ;Main.c: 156: } else if ((activeADChannel & 0x0F) >= 0x06) {
+  2648  070D  300F               	movlw	15
+  2649  070E  0557               	andwf	_activeADChannel,w
+  2650  070F  00F0               	movwf	??_hardwareInterruptISR
+  2651  0710  3006               	movlw	6
+  2652  0711  0270               	subwf	??_hardwareInterruptISR,w
+  2653  0712  1C03               	skipc
+  2654  0713  2F74               	goto	i1l1518
+  2655                           
+  2656                           ;Main.c: 157: slcAlarmTracker &= 0xFFFF ^ (0x01 << ((activeADChannel & 0x0F) - 0x06));
+  2657  0714  0857               	movf	_activeADChannel,w
+  2658  0715  390F               	andlw	15
+  2659  0716  3EFA               	addlw	-6
+  2660  0717  00F0               	movwf	??_hardwareInterruptISR
+  2661  0718  0AF0               	incf	??_hardwareInterruptISR,f
+  2662  0719  3001               	movlw	1
+  2663  071A  00F1               	movwf	??_hardwareInterruptISR+1
+  2664  071B  3000               	movlw	0
+  2665  071C  00F2               	movwf	??_hardwareInterruptISR+2
+  2666  071D  2F21               	goto	u172_24
+  2667  071E                     u172_25:	
+  2668  071E  1003               	clrc
+  2669  071F  0DF1               	rlf	??_hardwareInterruptISR+1,f
+  2670  0720  0DF2               	rlf	??_hardwareInterruptISR+2,f
+  2671  0721                     u172_24:	
+  2672  0721  0BF0               	decfsz	??_hardwareInterruptISR,f
+  2673  0722  2F1E               	goto	u172_25
+  2674  0723  09F1               	comf	??_hardwareInterruptISR+1,f
+  2675  0724  09F2               	comf	??_hardwareInterruptISR+2,f
+  2676  0725  0871               	movf	??_hardwareInterruptISR+1,w
+  2677  0726  05F8               	andwf	_slcAlarmTracker,f
+  2678  0727  0872               	movf	??_hardwareInterruptISR+2,w
+  2679  0728  05F9               	andwf	_slcAlarmTracker+1,f
+  2680                           
+  2681                           ;Main.c: 158: slcAlarmTracker |= ((activeADChannel & 0x10) >> 0x04) << ((activeADChannel
+      +                           & 0x0F) - 0x06);
+  2682  0729  0857               	movf	_activeADChannel,w
+  2683  072A  390F               	andlw	15
+  2684  072B  3EFA               	addlw	-6
+  2685  072C  00F0               	movwf	??_hardwareInterruptISR
+  2686  072D  0AF0               	incf	??_hardwareInterruptISR,f
+  2687  072E  0857               	movf	_activeADChannel,w
+  2688  072F  00F1               	movwf	??_hardwareInterruptISR+1
+  2689  0730  3004               	movlw	4
+  2690  0731                     u173_25:	
+  2691  0731  1003               	clrc
+  2692  0732  0CF1               	rrf	??_hardwareInterruptISR+1,f
+  2693  0733  3EFF               	addlw	-1
+  2694  0734  1D03               	skipz
+  2695  0735  2F31               	goto	u173_25
+  2696  0736  0871               	movf	??_hardwareInterruptISR+1,w
+  2697  0737  3901               	andlw	1
+  2698  0738  00F2               	movwf	??_hardwareInterruptISR+2
+  2699  0739  01F3               	clrf	??_hardwareInterruptISR+3
+  2700  073A  2F3E               	goto	u174_24
+  2701  073B                     u174_25:	
+  2702  073B  1003               	clrc
+  2703  073C  0DF2               	rlf	??_hardwareInterruptISR+2,f
+  2704  073D  0DF3               	rlf	??_hardwareInterruptISR+3,f
+  2705  073E                     u174_24:	
+  2706  073E  0BF0               	decfsz	??_hardwareInterruptISR,f
+  2707  073F  2F3B               	goto	u174_25
+  2708  0740  0872               	movf	??_hardwareInterruptISR+2,w
+  2709  0741  04F8               	iorwf	_slcAlarmTracker,f
+  2710  0742  0873               	movf	??_hardwareInterruptISR+3,w
+  2711  0743  04F9               	iorwf	_slcAlarmTracker+1,f
+  2712                           
+  2713                           ;Main.c: 159: slcTroubleTracker &= 0xFFFF ^ (0x01 << ((activeADChannel & 0x0F) - 0x06));
+  2714  0744  0857               	movf	_activeADChannel,w
+  2715  0745  390F               	andlw	15
+  2716  0746  3EFA               	addlw	-6
+  2717  0747  00F0               	movwf	??_hardwareInterruptISR
+  2718  0748  0AF0               	incf	??_hardwareInterruptISR,f
+  2719  0749  3001               	movlw	1
+  2720  074A  00F1               	movwf	??_hardwareInterruptISR+1
+  2721  074B  3000               	movlw	0
+  2722  074C  00F2               	movwf	??_hardwareInterruptISR+2
+  2723  074D  2F51               	goto	u175_24
+  2724  074E                     u175_25:	
+  2725  074E  1003               	clrc
+  2726  074F  0DF1               	rlf	??_hardwareInterruptISR+1,f
+  2727  0750  0DF2               	rlf	??_hardwareInterruptISR+2,f
+  2728  0751                     u175_24:	
+  2729  0751  0BF0               	decfsz	??_hardwareInterruptISR,f
+  2730  0752  2F4E               	goto	u175_25
+  2731  0753  09F1               	comf	??_hardwareInterruptISR+1,f
+  2732  0754  09F2               	comf	??_hardwareInterruptISR+2,f
+  2733  0755  0871               	movf	??_hardwareInterruptISR+1,w
+  2734  0756  05FA               	andwf	_slcTroubleTracker,f
+  2735  0757  0872               	movf	??_hardwareInterruptISR+2,w
+  2736  0758  05FB               	andwf	_slcTroubleTracker+1,f
+  2737                           
+  2738                           ;Main.c: 160: slcTroubleTracker |= ((activeADChannel & 0x20) >> 0x05) << ((activeADChann
+      +                          el & 0x0F) - 0x06);
+  2739  0759  0857               	movf	_activeADChannel,w
+  2740  075A  390F               	andlw	15
+  2741  075B  3EFA               	addlw	-6
+  2742  075C  00F0               	movwf	??_hardwareInterruptISR
+  2743  075D  0AF0               	incf	??_hardwareInterruptISR,f
+  2744  075E  0857               	movf	_activeADChannel,w
+  2745  075F  00F1               	movwf	??_hardwareInterruptISR+1
+  2746  0760  3005               	movlw	5
+  2747  0761                     u176_25:	
+  2748  0761  1003               	clrc
+  2749  0762  0CF1               	rrf	??_hardwareInterruptISR+1,f
+  2750  0763  3EFF               	addlw	-1
+  2751  0764  1D03               	skipz
+  2752  0765  2F61               	goto	u176_25
+  2753  0766  0871               	movf	??_hardwareInterruptISR+1,w
+  2754  0767  3901               	andlw	1
+  2755  0768  00F2               	movwf	??_hardwareInterruptISR+2
+  2756  0769  01F3               	clrf	??_hardwareInterruptISR+3
+  2757  076A  2F6E               	goto	u177_24
+  2758  076B                     u177_25:	
+  2759  076B  1003               	clrc
+  2760  076C  0DF2               	rlf	??_hardwareInterruptISR+2,f
+  2761  076D  0DF3               	rlf	??_hardwareInterruptISR+3,f
+  2762  076E                     u177_24:	
+  2763  076E  0BF0               	decfsz	??_hardwareInterruptISR,f
+  2764  076F  2F6B               	goto	u177_25
+  2765  0770  0872               	movf	??_hardwareInterruptISR+2,w
+  2766  0771  04FA               	iorwf	_slcTroubleTracker,f
+  2767  0772  0873               	movf	??_hardwareInterruptISR+3,w
+  2768  0773  04FB               	iorwf	_slcTroubleTracker+1,f
+  2769  0774                     i1l1518:	
+  2770                           
+  2771                           ;Main.c: 161: }
+  2772                           ;Main.c: 163: generalInterrupt |= 0x80;
+  2773  0774  17DB               	bsf	_generalInterrupt,7
+  2774  0775                     i1l128:	
+  2775  0775  0877               	movf	??_hardwareInterruptISR+7,w
+  2776  0776  00FF               	movwf	127
+  2777  0777  0876               	movf	??_hardwareInterruptISR+6,w
+  2778  0778  008A               	movwf	10
+  2779  0779  0875               	movf	??_hardwareInterruptISR+5,w
+  2780  077A  0084               	movwf	4
+  2781  077B  0E74               	swapf	(??_hardwareInterruptISR+4)^(0+-128),w
+  2782  077C  0083               	movwf	3
+  2783  077D  0EFE               	swapf	126,f
+  2784  077E  0E7E               	swapf	126,w
+  2785  077F  0009               	retfie
+  2786  0780                     __end_of_hardwareInterruptISR:	
+  2787  007E                     btemp	set	126	;btemp
+  2788  007E                     wtemp	set	126
+  2789  007E                     wtemp0	set	126
+  2790  0080                     wtemp1	set	128
+  2791  0082                     wtemp2	set	130
+  2792  0084                     wtemp3	set	132
+  2793  0086                     wtemp4	set	134
+  2794  0088                     wtemp5	set	136
+  2795  007F                     wtemp6	set	127
+  2796  007E                     ttemp	set	126
+  2797  007E                     ttemp0	set	126
+  2798  0081                     ttemp1	set	129
+  2799  0084                     ttemp2	set	132
+  2800  0087                     ttemp3	set	135
+  2801  007F                     ttemp4	set	127
+  2802  007E                     ltemp	set	126
+  2803  007E                     ltemp0	set	126
+  2804  0082                     ltemp1	set	130
+  2805  0086                     ltemp2	set	134
+  2806  0080                     ltemp3	set	128
+  2807                           
+  2808                           	psect	intentry
+  2809  0004                     __pintentry:	
+  2810                           ;incstack = 0
+  2811                           ; Regs used in _hardwareInterruptISR: [wreg+status,2+status,0]
+  2812                           
+  2813  0004                     interrupt_function:	
+  2814  007E                     saved_w	set	btemp
+  2815  0004  00FE               	movwf	btemp
+  2816  0005  0E03               	swapf	3,w
+  2817  0006  00F4               	movwf	??_hardwareInterruptISR+4
+  2818  0007  0804               	movf	4,w
+  2819  0008  00F5               	movwf	??_hardwareInterruptISR+5
+  2820  0009  080A               	movf	10,w
+  2821  000A  00F6               	movwf	??_hardwareInterruptISR+6
+  2822  000B  1283               	bcf	3,5	;RP0=0, select bank0
+  2823  000C  1303               	bcf	3,6	;RP1=0, select bank0
+  2824  000D  087F               	movf	btemp+1,w
+  2825  000E  00F7               	movwf	??_hardwareInterruptISR+7
+  2826  000F  118A  2E74         	ljmp	_hardwareInterruptISR
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        4
+    BSS         27
+    Persistent  2
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14      8      14
+    BANK0            80     51      78
+    BANK1            80      0       0
+    BANK2            80      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    None.
+
+Critical Paths under _hardwareInterruptISR in COMMON
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    _main->_softwareISR
+
+Critical Paths under _hardwareInterruptISR in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _hardwareInterruptISR in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _hardwareInterruptISR in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                26    26      0       0
+                                             25 BANK0     26    26      0
+                        _softwareISR
+ ---------------------------------------------------------------------------------
+ (1) _softwareISR                                         25    25      0       0
+                                              0 BANK0     25    25      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (2) _hardwareInterruptISR                                 8     8      0       0
+                                              0 COMMON     8     8      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _softwareISR
+
+ _hardwareInterruptISR (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+SFR3                 0      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+BANK2               50      0       0       7        0.0%
+BITBANK2            50      0       0       6        0.0%
+SFR2                 0      0       0       5        0.0%
+BITSFR2              0      0       0       5        0.0%
+BANK1               50      0       0       5        0.0%
+BITBANK1            50      0       0       4        0.0%
+SFR1                 0      0       0       2        0.0%
+BITSFR1              0      0       0       2        0.0%
+BANK0               50     33      4E       3       97.5%
+BITBANK0            50      0       0       9        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR0              0      0       0       1        0.0%
+COMMON               E      8       E       1      100.0%
+BITCOMMON            E      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+DATA                 0      0      5C      10        0.0%
+ABS                  0      0      5C       8        0.0%
+NULL                 0      0       0       0        0.0%
+STACK                0      0       0       2        0.0%
+EEDATA             100      0       0       0        0.0%
+
+
+Microchip Technology PIC Macro Assembler V1.38 build -256452561 
+Symbol Table                                                                                   Wed Feb 22 17:57:47 2017
+
+                  __CFG_CP$OFF 0000                    _softwareISR 0032                             fsr 0004  
+                          l131 0050                            l133 004C                            l134 005E  
+                          l135 0071                            l136 0081                            l137 0092  
+                          l147 03E6                            l148 03F5                            l149 03EE  
+                 __CFG_CPD$OFF 0000                            fsr0 0004                            indf 0000  
+                 __CFG_IESO$ON 0000                   __CFG_LVP$OFF 0000                           l1120 0047  
+                         l1210 0359                           l1152 00A8                           l1170 00EB  
+                         l1148 00A2                           l1422 03DC                           l1158 00C9  
+                         l1416 03D2                           l1176 00FA                           l1442 03FC  
+                         l1452 0422                           l1460 0444                           l1554 0482  
+                         u2005 05D3                           u2015 05E0                           u2104 063A  
+                         u2024 05EB                           u1305 02BA                           u2105 0638  
+                         u2025 05E9                           u1315 02CC                           u2115 0641  
+                         u2035 05F4                           u2124 0651                           u2044 05FF  
+                         u1325 02DE                           u1245 00B7                           u2125 064F  
+                         u2045 05FD                           _LATA 0053                           u2134 065D  
+                         _LATB 0054                           u1335 02EA                           u2135 065B  
+                         u2055 0606                           _LATC 0055                           _LATD 0056  
+                         u1505 0418                           u1345 0309                           u1265 00D9  
+                         u2145 0664                           u2065 060E                           u1355 031B  
+                         u2075 061B                           u2084 0626                           u1365 032D  
+                         u2085 0624                           u1535 0436                           u1375 0339  
+                         u2095 062F                           u1385 034F                           u1395 0361  
+                         u1805 04B1                           u1815 04C3                           _PIE1 008C  
+                         u1905 0551                           u1825 04CF                           u1915 055A  
+                         u1835 04E5                           u1925 056D                           u1845 04F9  
+                         u1935 0584                           u1855 0505                           u1945 0598  
+                         u1865 0521                           u1785 0486                           u1955 05A5  
+                         u1875 0530                           u1795 049F                           u1964 05B0  
+                         u1965 05AE                           u1885 0539                           u1975 05B9  
+                         u1895 0541                           u1984 05C4                           u1985 05C2  
+                         u1995 05CB                           _PIR1 000C                   __CFG_WRT$OFF 0000  
+                __CFG_FCMEN$ON 0000                           _main 044B                           btemp 007E  
+                __CFG_BOREN$ON 0000                           ltemp 007E          ?_hardwareInterruptISR 0070  
+                         start 0011                           ttemp 007E                           wtemp 007E  
+          _slcTroubleInterrupt 0066        _generalTroubleInterrupt 005D                          ?_main 0070  
+                __CFG_WDTE$OFF 0000                          _ANSEL 0188                          i1l115 069B  
+                        i1l117 06C0                          i1l128 0775                          _PORTA 0005  
+                        _PORTB 0006                          _PORTC 0007                          _PORTD 0008  
+                        _PORTE 0009                          _TRISA 0085                          _TRISB 0086  
+                        _TRISC 0087                          _TRISD 0088                          _TRISE 0089  
+                __CFG_PWRTE$ON 0000                          pclath 000A                          ltemp0 007E  
+                        ltemp1 0082                          ltemp2 0086                          ltemp3 0080  
+                        ttemp0 007E                          ttemp1 0081                          ttemp2 0084  
+                        ttemp3 0087                          ttemp4 007F                          status 0003  
+                        wtemp0 007E                          wtemp1 0080                          wtemp2 0082  
+                        wtemp3 0084                          wtemp4 0086                          wtemp5 0088  
+                        wtemp6 007F                 __CFG_MCLRE$OFF 0000                __initialization 0013  
+                 __end_of_main 0674                         ??_main 0039                         _ADCON0 001F  
+                       _ADCON1 009F                         _ADRESH 001E                         _ADRESL 009E  
+                       _ANSELH 0189                         i1l1510 0705                         i1l1502 06F3  
+                       i1l1506 06FC                         i1l1518 0774                         i1l1476 0690  
+                       i1l1486 06CB                         i1l1488 06CC                         i1l1498 06E5  
+                       _INTCON 000B                         u172_24 0721                         u172_25 071E  
+                       u173_25 0731                         u174_24 073E                         u174_25 073B  
+                       u175_24 0751                         u175_25 074E                         u176_25 0761  
+                       u177_24 076E                         u177_25 076B                         _OSCCON 008F  
+                       _WDTCON 0105         ??_hardwareInterruptISR 0070                _buttonInterrupt 0058  
+                       saved_w 007E        __end_of__initialization 002F                 __pcstackCOMMON 0070  
+                 __pidataBANK0 0788              _slcTroubleTracker 007A                   ?_softwareISR 0070  
+                _buttonTracker 006C                     __pbssBANK0 0053                     __pmaintext 044B  
+                   __pintentry 0004                     _nacControl 006A                     _ledControl 005E  
+                 _coderControl 0068                   _coderCounter 0069            _generalTroubleCause 005C  
+                      __ptext1 0032                        __ptext2 0674                     _slcControl 0064  
+                      clrloop0 0781           end_of_initialization 002F                  _preAlarmCause 0061  
+         __size_of_softwareISR 0419          _generalTroubleTracker 006D  __size_of_hardwareInterruptISR 010C  
+          start_initialization 0013                _slcTroubleCause 0065            _nacTroubleInterrupt 0060  
+     __CFG_FOSC$INTRC_NOCLKOUT 0000                    __pdataBANK0 0068                    __pbssCOMMON 0078  
+                    ___latbits 0001                  __pcstackBANK0 0020                 _utilityCounter 0067  
+                    __pnvBANK0 006C                _slcAlarmTracker 0078              interrupt_function 0004  
+              _nacTroubleCause 005F                      clear_ram0 0780              _slcAlarmInterrupt 007D  
+            _currentConditions 0059                  ??_softwareISR 0020                _preAlarmControl 0062  
+ __end_of_hardwareInterruptISR 0780                   _resetCounter 0063              __CFG_BOR4V$BOR40V 0000  
+                __size_of_main 0229                 _nacTypeControl 006B              _generalAlarmCause 005A  
+          __end_of_softwareISR 044B              _nacTroubleTracker 007C                       intlevel1 0000  
+                   _OPTION_REG 0081           _hardwareInterruptISR 0674               _generalInterrupt 005B  
+              _activeADChannel 0057  
